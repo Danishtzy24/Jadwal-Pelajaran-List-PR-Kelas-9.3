@@ -1,5 +1,4 @@
-/* styles.css */
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -34,6 +33,7 @@ main {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    flex-wrap: wrap; /* Ensure proper wrapping on smaller screens */
 }
 
 .half {
@@ -42,13 +42,14 @@ main {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add margin for better spacing on small screens */
 }
 
 .half h2 {
     margin-top: 0;
-    margin-bottom: 20px; /* Ensure proper spacing */
-    color: #333; /* Ensure text color is visible */
-    font-size: 1.5em; /* Adjust font size if necessary */
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
 }
 
 #schedule-table-container {
@@ -106,15 +107,66 @@ main {
     margin-bottom: 5px;
 }
 
-.task-half {
-    background-color: #f9f9f9;
-    padding: 10px;
-    font-style: bold;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    #datetime {
+        font-size: 1em;
+    }
+
+    .half {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .half h2 {
+        font-size: 1.2em;
+    }
+
+    #schedule-table th, #schedule-table td {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+
+    .task-item {
+        padding: 8px;
+    }
 }
 
-.task-half strong {
-    display: block;
-    margin-bottom: 5px;
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header h2 {
+        font-size: 1em;
+    }
+
+    #datetime {
+        font-size: 0.9em;
+    }
+
+    .half {
+        padding: 10px 5px;
+    }
+
+    .half h2 {
+        font-size: 1em;
+    }
+
+    #schedule-table th, #schedule-table td {
+        padding: 4px;
+        font-size: 0.8em;
+    }
+
+    .task-item {
+        padding: 6px;
+    }
 }
