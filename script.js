@@ -161,9 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('Autoplay prevented:', error);
     });
 
-    document.body.addEventListener('click', () => {
-        audio.play().catch(error => {
-            console.log('Autoplay prevented:', error);
-        });
-    }, { once: true });
+    const audio = document.getElementById('background-music');
+    audio.play().catch(error => {
+        console.log('Autoplay prevented:', error);
 });
