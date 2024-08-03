@@ -151,6 +151,17 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTasks();
 
     const audio = document.getElementById('background-music');
-    audio.play()
-    });
+    const interactionMessage = document.getElementById('interaction-message');
+
+    function playAudio() {
+        audio.play().then(() => {
+            interactionMessage.style.display = 'none';
+        }).catch(error => {
+            interactionMessage.style.display = 'block';
+        });
+    }
+
+    playAudio();
+
+    document.body.addEventListener('click', playAudio, { once: true });
 });
