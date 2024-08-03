@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Jadwal Pelajaran dan PR Kelas 9.3</h1>
-        <h2 style="margin-top: 5px; margin-bottom: 20px;">By Danish</h2>
+        <h2>By Danish</h2>
         <div id="datetime"></div>
     </header>
     <main>
@@ -30,12 +30,15 @@
         </section>
         <section id="tasks" class="half">
             <h2>Daftar Tugas</h2>
-            <!-- Konten daftar tugas di sini -->
         </section>
-        <audio id="background-music" autoplay loop>
-            <source src="DawnOfTheDoors.mp3" type="audio/mp3">
-        </audio>
     </main>
+    <audio id="background-music" autoplay loop>
+        <source src="DawnOfTheDoors.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="interaction-message" style="display:none; text-align:center; margin-top:20px;">
+        Please click anywhere on the page to start the background music.
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
