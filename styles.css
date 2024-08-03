@@ -1,0 +1,120 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header h2 {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#datetime {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.half {
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.half h2 {
+    margin-top: 0;
+    margin-bottom: 20px; /* Ensure proper spacing */
+    color: #333; /* Ensure text color is visible */
+    font-size: 1.5em; /* Adjust font size if necessary */
+}
+
+#schedule-table-container {
+    overflow-x: auto;
+}
+
+#schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#schedule-table th, #schedule-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#schedule-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.day-name {
+    background-color: #13941e;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.subject-name {
+    padding: 10px 0;
+}
+
+.teacher-name {
+    display: block;
+    font-size: 0.9em;
+    color: #666;
+}
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.task-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.task-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.task-half {
+    background-color: #f9f9f9;
+    padding: 10px;
+    font-style: bold;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.task-half strong {
+    display: block;
+    margin-bottom: 5px;
+}
