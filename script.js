@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const notificationTime = new Date(task.dueDate);
             notificationTime.setDate(notificationTime.getDate() - 1);
-            notificationTime.setHours(20, 0, 0); // Set waktu ke jam 8 malam sehari sebelumnya
+            notificationTime.setHours(19, 0, 0); // Set waktu ke jam 8 malam sehari sebelumnya
             if (notificationTime > new Date()) {
                 scheduleNotification(notificationTime, task.subject);
             }
