@@ -42,31 +42,26 @@ document.addEventListener("DOMContentLoaded", () => {
             description: "Kerjakan Lks Hal 15 Asesment Formatif 3 Beserta 2 Soal Hots Di Hal 16",
             dueDate: new Date("2024-08-05"),
         },
-
         {
             subject: "SBK (Jika Sudah Menggambar)",
             description: "Kerjakan Lks hal 26 A dan B",
             dueDate: new Date("2024-08-05"),
         },
-
         {
             subject: "PKN",
             description: "Setor Hafalan UUD",
             dueDate: new Date("2024-08-06"),
         },
-
         {
             subject: "IT",
             description: "Kerjakan Lks Hal 12 Bagian A",
             dueDate: new Date("2024-08-06"),
         },
-
         {
             subject: "SKI",
             description: "Kerjakan Lks Hal 9 Bagian A",
             dueDate: new Date("2024-08-07"),
         },
-
         {
             subject: "Tahfidz",
             description: "Setorsn Hafalan",
@@ -155,13 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
     renderSchedule();
     renderTasks();
 
-      const audio = document.getElementById('background-music');
-    audio.loop = true; // Set audio to loop
-    audio.play().catch(error => {
-        console.log('Autoplay prevented:', error);
-    });
-
     const audio = document.getElementById('background-music');
     audio.play().catch(error => {
         console.log('Autoplay prevented:', error);
+    });
 });
