@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const interactionMessage = document.getElementById('interaction-message');
 
     function playAudio() {
-        audio.play().then(() => {
+        audio.remove().then(() => {
             interactionMessage.style.display = 'none';
         }).catch(error => {
             interactionMessage.style.display = 'block';
