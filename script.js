@@ -154,4 +154,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderSchedule();
     renderTasks();
+
+     const audio = document.getElementById('background-music');
+    document.body.addEventListener('click', () => {
+        audio.play().catch(error => {
+            console.log('Autoplay prevented:', error);
+        });
+    }, { once: true });
 });
