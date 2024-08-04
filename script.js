@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             subject: "SBK (Jika Sudah Menggambar)",
-            description: "Kerjakan Lks hal 26 A dan B",
+            description: "Kerjakan Lks senirupa hal 26 A dan B, dan kerjakan lks hal 20 asesment formatif 2",
             dueDate: new Date("2024-08-05"),
             status: "kelar",
         },
