@@ -73,6 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-08-08"),
             status: "belum kelar",
         },
+
+        {
+            subject: "Tahfidz",
+            description: "Mencari 10 idzhar pada surah Al Qiyamah",
+            dueDate: new Date("2024-08-08"),
+            status: "belum kelar",
+        },
     ];
 
     const subjectColors = {
