@@ -41,33 +41,50 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Bahasa Indonesia",
             description: "Kerjakan Lks Hal 15 Asesment Formatif 3 Beserta 2 Soal Hots Di Hal 16",
             dueDate: new Date("2024-08-05"),
+            status: "kelar",
         },
         {
             subject: "SBK (Jika Sudah Menggambar)",
             description: "Kerjakan Lks hal 26 A dan B",
             dueDate: new Date("2024-08-05"),
+            status: "kelar",
         },
         {
             subject: "PKN",
             description: "Setor Hafalan UUD",
             dueDate: new Date("2024-08-06"),
+            status: "belum kelar",
         },
         {
             subject: "IT",
             description: "Kerjakan Lks Hal 12 Bagian A",
             dueDate: new Date("2024-08-06"),
+            status: "kelar",
         },
         {
             subject: "SKI",
             description: "Kerjakan Lks Hal 9 Bagian A",
             dueDate: new Date("2024-08-07"),
+            status: "kelar",
         },
         {
             subject: "Tahfidz",
-            description: "Setorsn Hafalan",
+            description: "Setoran Hafalan",
             dueDate: new Date("2024-08-08"),
+            status: "belum kelar",
         },
     ];
+
+    const subjectColors = {
+        "Bahasa Indonesia": "seagreen",
+        "PJOK": "seagreen",
+        "SBK (Jika Sudah Menggambar)": "seagreen",
+        "PKN": "seagreen",
+        "IT": "seagreen",
+        "SKI": "seagreen",
+        "Tahfidz": "seagreen",
+        // Tambahkan warna untuk mata pelajaran lainnya sesuai kebutuhan
+    };
 
     function updateDateTime() {
         const now = new Date();
@@ -116,7 +133,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 day: "numeric",
             });
 
-            taskDiv.innerHTML = `<strong>${task.subject}</strong> - ${task.description}<br>Tenggat : ${dueDateString}`;
+            // Menentukan warna berdasarkan status
+            const statusColor = task.status === "kelar" ? "green" : "red";
+
+            // Menentukan warna berdasarkan nama pelajaran
+            const subjectColor = subjectColors[task.subject] || "black";
+
+            taskDiv.innerHTML = `
+                <strong style="color: ${subjectColor}">${task.subject}</strong> - ${task.description}<br>
+                Tugasnya Danish: <span style="color: ${statusColor}">${task.status}</span><br>
+                Tenggat: ${dueDateString}
+            `;
             taskSection.appendChild(taskDiv);
 
             const notificationTime = new Date(task.dueDate);
@@ -151,17 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTasks();
 
     const audio = document.getElementById('background-music');
-    const interactionMessage = document.getElementById('interaction-message');
-
-    function playAudio() {
-        audio.remove().then(() => {
-            interactionMessage.style.display = 'none';
-        }).catch(error => {
-            interactionMessage.style.display = 'block';
-        });
-    }
-
-    playAudio();
-
-    document.body.addEventListener('click', playAudio, { once: true });
+    audio.remove().catch(error => {
+        console.log('Autoplay prevented:', error);
+    });
 });
