@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskData = [
         {
             subject: "Bahasa Indonesia",
-            description: "Kerjakan Lks Hal 15 Asesment Formatif 3 Beserta 2 Soal Hots Di Hal 16",
-            dueDate: new Date("2024-08-05"),
-            status: "kelar",
+            description: "Membuat pengalaman menggunakan teks deskripsi secara berurutan, menggunakan 2 paragraft deskripsi bagian, 2 paragraft peristiwa (boleh dicampur) dan 1 paragraft simpulan",
+            dueDate: new Date("2024-08-12"),
+            status: "belum kelar",
         },
         {
             subject: "SBK (Jika Sudah Menggambar)",
