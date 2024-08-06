@@ -38,27 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "Bahasa Indonesia",
-            description: "Membuat pengalaman menggunakan teks deskripsi secara berurutan, menggunakan 2 paragraft deskripsi bagian, 2 paragraft peristiwa (boleh dicampur) dan 1 paragraft simpulan",
-            dueDate: new Date("2024-08-12"),
-            status: "belum kelar",
-        },
-        {
             subject: "SBK (Jika Sudah Menggambar)",
             description: "Kerjakan Lks senirupa hal 26 A dan B, dan kerjakan lks hal 20 asesment formatif 2",
             dueDate: new Date("2024-08-05"),
-            status: "kelar",
-        },
-        {
-            subject: "PKN",
-            description: "Setor Hafalan UUD",
-            dueDate: new Date("2024-08-06"),
-            status: "belum kelar",
-        },
-        {
-            subject: "IT",
-            description: "Kerjakan Lks Hal 12 Bagian A",
-            dueDate: new Date("2024-08-06"),
             status: "kelar",
         },
         {
@@ -66,6 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
             description: "Kerjakan Lks Hal 9 Bagian A",
             dueDate: new Date("2024-08-07"),
             status: "kelar",
+        },
+        {
+            subject: "IPS",
+            description: "Bsk membawa laptop untuk melanjutkan membuat PPT tentang perubahan sosial",
+            dueDate: new Date("2024-08-07"),
+            status: "blm kelar",
         },
         {
             subject: "Tahfidz",
@@ -78,6 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Tahfidz",
             description: "Mencari 10 idzhar pada surah Al Qiyamah",
             dueDate: new Date("2024-08-08"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Bahasa Indonesia",
+            description: "Hari Senin Ulangan",
+            dueDate: new Date("2024-08-12"),
             status: "belum kelar",
         },
     ];
