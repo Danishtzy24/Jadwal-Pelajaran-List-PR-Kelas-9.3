@@ -38,22 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "SBK (Jika Sudah Menggambar)",
-            description: "Kerjakan Lks senirupa hal 26 A dan B, dan kerjakan lks hal 20 asesment formatif 2",
-            dueDate: new Date("2024-08-05"),
-            status: "kelar",
-        },
-        {
-            subject: "SKI",
-            description: "Kerjakan Lks Hal 9 Bagian A",
-            dueDate: new Date("2024-08-07"),
-            status: "kelar",
-        },
-        {
-            subject: "IPS",
-            description: "Bsk membawa laptop untuk melanjutkan membuat PPT tentang perubahan sosial",
-            dueDate: new Date("2024-08-07"),
-            status: "blm kelar",
+            subject: "FIKIH",
+            description: "Kerjakan Hal 19 lks Bagian A",
+            dueDate: new Date("2024-08-08"),
+            status: "belum kelar",
         },
         {
             subject: "Tahfidz",
