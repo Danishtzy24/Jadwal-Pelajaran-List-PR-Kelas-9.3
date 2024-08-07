@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "SKI": "seagreen",
         "Tahfidz": "seagreen",
         "FIKIH": "seagreen",
+        "MTK": "seagreen",
     };
 
     function updateDateTime() {
