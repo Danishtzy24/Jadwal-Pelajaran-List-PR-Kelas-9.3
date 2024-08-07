@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const scheduleData = [
         { day: "Senin", subjects: [
-            { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
+            { name: "SBK", teacher: "Ida Farida, S.Ag" },
             { name: "IPS", teacher: "Eko Suwarmo, S.Pd" },
             { name: "PJOK", teacher: "Rismanto, S.Pd., MA" },
             { name: "Bahasa Inggris", teacher: "Siti Suryani, S.Pd" },
-            { name: "SBK", teacher: "Ida Farida, S.Ag" }
+            { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" }
         ]},
         { day: "Selasa", subjects: [
             { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
         { day: "Kamis", subjects: [
             { name: "Aqidah Akhlaq", teacher: "Dra. Hj. Nursaena" },
             { name: "FIKIH", teacher: "Ahmad Zakaria, Lc" },
-            { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd" },
+            { name: "Bahasa Arab (1 jam)", teacher: "H. Taufik Husein, SS., M.Pd" },
             { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
-            { name: "Bahasa Arab (1 jam)", teacher: "H. Taufik Husein, SS., M.Pd" }
+            { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd" }
         ]},
         { day: "Jumat", subjects: [
             { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
@@ -62,6 +62,18 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-08-12"),
             status: "belum kelar",
         },
+        {
+            subject: "Puisi Bebas",
+            description: "Dikumpulin Hari Selasa",
+            dueDate: new Date("2024-08-13"),
+            status: "belum kelar",
+        },
+        {
+            subject: "MTK",
+            description: "Hari Rabu Ulangan",
+            dueDate: new Date("2024-08-14"),
+            status: "belum kelar",
+        },
     ];
 
     const subjectColors = {
@@ -72,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "IT": "seagreen",
         "SKI": "seagreen",
         "Tahfidz": "seagreen",
-        // Tambahkan warna untuk mata pelajaran lainnya sesuai kebutuhan
+        "FIKIH": "seagreen",
     };
 
     function updateDateTime() {
