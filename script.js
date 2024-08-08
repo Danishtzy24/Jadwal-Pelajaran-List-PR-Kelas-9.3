@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         { day: "Kamis", subjects: [
             { name: "Aqidah Akhlaq", teacher: "Dra. Hj. Nursaena" },
             { name: "FIKIH", teacher: "Ahmad Zakaria, Lc" },
-            { name: "Bahasa Arab (1 jam)", teacher: "H. Taufik Husein, SS., M.Pd" },
-            { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
+            { name: "Bahasa Arab", teacher: "H. Taufik Husein, SS., M.Pd" },
+            { name: "PKN (1jam)", teacher: "Lilik Haryani, S.Pd" },
             { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd" }
         ]},
         { day: "Jumat", subjects: [
@@ -39,17 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskData = [
         {
             subject: "FIKIH",
-            description: "Kerjakan Hal 19 lks Bagian A",
+            description: "Kerjakan Hal 19 lks Bagian A dan B",
             dueDate: new Date("2024-08-08"),
-            status: "belum kelar",
+            status: "kelar",
         },
-        {
-            subject: "Tahfidz",
-            description: "Setoran Hafalan",
-            dueDate: new Date("2024-08-08"),
-            status: "belum kelar",
-        },
-
         {
             subject: "Tahfidz",
             description: "Mencari 10 idzhar pada surah Al Qiyamah",
@@ -74,6 +67,24 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-08-14"),
             status: "belum kelar",
         },
+        {
+            subject: "Akidah Akhlak",
+            description: "Menulis dalil yang berhubungan dengan hari akhir/kiamat",
+            dueDate: new Date("2024-08-14"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Akidah Akhlak",
+            description: "Menulis nama nama hari akhir beserta dalil nya",
+            dueDate: new Date("2024-08-14"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Akidah Akhlak",
+            description: "Menulis ciri ciri perilaku orang yang mencerminkan sifat kepada hari akhir/kiamat",
+            dueDate: new Date("2024-08-14"),
+            status: "belum kelar",
+        },
     ];
 
     const subjectColors = {
@@ -86,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Tahfidz": "seagreen",
         "FIKIH": "seagreen",
         "MTK": "seagreen",
+        "Akidah Akhlak": "seagreen",
     };
 
     function updateDateTime() {
