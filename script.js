@@ -37,17 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const taskData = [
+        // List tugas yang bakal terupdate setiap hari Senin - Jumat (Berdasarkan catatan tugas yang Danish Catet)
         {
             subject: "FIKIH",
             description: "Kerjakan Hal 19 lks Bagian A dan B",
             dueDate: new Date("2024-08-08"),
             status: "kelar",
-        },
-        {
-            subject: "Tahfidz",
-            description: "Mencari 10 idzhar pada surah Al Qiyamah",
-            dueDate: new Date("2024-08-08"),
-            status: "belum kelar",
         },
         {
             subject: "Bahasa Indonesia",
