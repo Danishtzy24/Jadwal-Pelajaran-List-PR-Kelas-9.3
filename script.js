@@ -68,6 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-08-15"),
             status: "belum kelar",
         },
+        {
+            subject: "Qurdist",
+            description: "Menghafalkan Hadist Yang Ada Di Halaman 44 Dan 49 (Masih 3 Minggu Lagi)",
+            dueDate: new Date("2024-08-15"),
+            status: "belum kelar",
+        },
     ];
 
     const subjectColors = {
