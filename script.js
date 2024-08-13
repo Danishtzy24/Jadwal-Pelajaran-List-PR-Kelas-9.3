@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             subject: "Qurdist",
             description: "Menghafalkan Hadist Yang Ada Di Halaman 44 Dan 49 (Masih 3 Minggu Lagi)",
-            dueDate: new Date("2024-08-15"),
+            dueDate: new Date("2024-08-30"),
             status: "belum kelar",
         },
     ];
@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Akidah Akhlak": "seagreen",
         "Bahasa Arab": "seagreen",
         "IPS": "seagreen",
+        "Qurdist": "seagreen",
     };
 
     function updateDateTime() {
