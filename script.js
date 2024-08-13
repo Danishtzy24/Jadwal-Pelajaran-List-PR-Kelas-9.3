@@ -39,45 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskData = [
         // List tugas yang bakal terupdate setiap hari Senin - Jumat (Berdasarkan catatan tugas yang Danish Catet)
         {
-            subject: "FIKIH",
-            description: "Kerjakan Hal 19 lks Bagian A dan B",
-            dueDate: new Date("2024-08-08"),
-            status: "kelar",
-        },
-        {
-            subject: "Bahasa Indonesia",
-            description: "Hari Senin Ulangan",
-            dueDate: new Date("2024-08-12"),
-            status: "belum kelar",
-        },
-        {
-            subject: "Puisi Bebas",
-            description: "Dikumpulin Hari Selasa",
-            dueDate: new Date("2024-08-13"),
-            status: "belum kelar",
-        },
-        {
-            subject: "MTK",
-            description: "Hari Rabu Ulangan",
+            subject: "Bahasa Arab",
+            description: "Terjemahin Bukpet Hal 5 dan 6 (Semuanya)",
             dueDate: new Date("2024-08-14"),
             status: "belum kelar",
+        },
+        {
+            subject: "IPS",
+            description: "Buat PPT tentang Modernisasi (Bagi yang blm)",
+            dueDate: new Date("2024-08-14"),
+            status: "kelar",
         },
         {
             subject: "Akidah Akhlak",
             description: "Menulis dalil yang berhubungan dengan hari akhir/kiamat",
-            dueDate: new Date("2024-08-14"),
+            dueDate: new Date("2024-08-15"),
             status: "belum kelar",
         },
         {
             subject: "Akidah Akhlak",
             description: "Menulis nama nama hari akhir beserta dalil nya",
-            dueDate: new Date("2024-08-14"),
+            dueDate: new Date("2024-08-15"),
             status: "belum kelar",
         },
         {
             subject: "Akidah Akhlak",
             description: "Menulis ciri ciri perilaku orang yang mencerminkan sifat kepada hari akhir/kiamat",
-            dueDate: new Date("2024-08-14"),
+            dueDate: new Date("2024-08-15"),
             status: "belum kelar",
         },
     ];
