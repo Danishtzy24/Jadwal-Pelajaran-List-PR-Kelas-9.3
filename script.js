@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "MTK": "seagreen",
         "Akidah Akhlak": "seagreen",
         "Bahasa Arab": "seagreen",
+        "IPS": "seagreen",
     };
 
     function updateDateTime() {
