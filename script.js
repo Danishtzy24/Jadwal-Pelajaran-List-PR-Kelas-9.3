@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "IPS",
             description: "Buat PPT tentang Modernisasi (Bagi yang blm)",
             dueDate: new Date("2024-08-14"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "Akidah Akhlak",
