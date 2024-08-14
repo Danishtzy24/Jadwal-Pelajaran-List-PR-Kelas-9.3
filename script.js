@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-08-14"),
             status: "kelar",
         },
+{
+            subject: "IPS",
+            description: "Kerjakan LKS IPS hal 20 beserta dengan pemantik belajar no 1 sampai 3",
+            dueDate: new Date("2024-08-19"),
+            status: "kelar",
+        },
         {
             subject: "Akidah Akhlak",
             description: "Menulis dalil yang berhubungan dengan hari akhir/kiamat",
