@@ -53,7 +53,7 @@ main {
 }
 
 #schedule-table-container {
-    overflow-x: auto;
+    overflow-x: auto; /* Ensure tables are scrollable */
 }
 
 #schedule-table, #exam-table, #tasks-list table {
@@ -141,25 +141,24 @@ main {
         display: block;
         width: 100%;
         box-sizing: border-box;
-        padding: 10px 5px; /* Increase padding for better touch targets */
-        position: relative;
+        padding: 10px;
         border-bottom: 1px solid #ddd;
+        position: relative;
+        font-size: 0.9em; /* Adjust font size */
     }
 
     #schedule-table td::before, #exam-table td::before, #tasks-list td::before {
         content: attr(data-label);
         position: absolute;
         left: 0;
-        width: 50%;
+        width: 100%;
         padding-left: 10px;
         font-weight: bold;
-        white-space: nowrap;
         background: #f0f0f0;
         color: #333;
     }
 
     #schedule-table td, #exam-table td, #tasks-list td {
-        text-align: left;
         padding-left: 50%;
     }
 }
@@ -170,4 +169,3 @@ main {
         flex: 1 1 calc(33.333% - 40px); /* Adjust the width for larger screens */
     }
 }
-
