@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const scheduleData = [
         { day: "Senin", subjects: [
-            { name: "SBK", teacher: "Ida Farida, S.Ag" },
+            { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
             { name: "IPS", teacher: "Eko Suwarmo, S.Pd" },
             { name: "PJOK", teacher: "Rismanto, S.Pd., MA" },
             { name: "Bahasa Inggris", teacher: "Siti Suryani, S.Pd" },
-            { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" }
+            { name: "SBK", teacher: "Ida Farida, S.Ag" }
         ]},
         { day: "Selasa", subjects: [
             { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
         { day: "Kamis", subjects: [
             { name: "Aqidah Akhlaq", teacher: "Dra. Hj. Nursaena" },
             { name: "FIKIH", teacher: "Ahmad Zakaria, Lc" },
-            { name: "Bahasa Arab", teacher: "H. Taufik Husein, SS., M.Pd" },
-            { name: "PKN (1jam)", teacher: "Lilik Haryani, S.Pd" },
-            { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd" }
+            { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd" },
+            { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
+            { name: "Bahasa Arab (1 jam)", teacher: "H. Taufik Husein, SS., M.Pd" }
         ]},
         { day: "Jumat", subjects: [
             { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
@@ -37,49 +37,58 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const taskData = [
-        // List tugas yang bakal terupdate setiap hari Senin - Jumat (Berdasarkan catatan tugas yang Danish Catet)
         {
-            subject: "Bahasa Arab",
-            description: "Terjemahin Bukpet Hal 5 dan 6 (Semuanya)",
-            dueDate: new Date("2024-08-14"),
-            status: "belum kelar",
-        },
-        {
-            subject: "IPS",
-            description: "Buat PPT tentang Modernisasi (Bagi yang blm)",
-            dueDate: new Date("2024-08-14"),
-            status: "kelar",
-        },
-{
-            subject: "IPS",
-            description: "Kerjakan LKS IPS hal 20 beserta dengan pemantik belajar no 1 sampai 3",
-            dueDate: new Date("2024-08-19"),
+            subject: "Bahasa Indonesia",
+            description: "Kerjakan Lks Hal 15 Asesment Formatif 3 Beserta 2 Soal Hots Di Hal 16",
+            dueDate: new Date("2024-08-05"),
             status: "kelar",
         },
         {
-            subject: "Akidah Akhlak",
-            description: "Menulis dalil yang berhubungan dengan hari akhir/kiamat",
-            dueDate: new Date("2024-08-15"),
+            subject: "SBK (Jika Sudah Menggambar)",
+            description: "Kerjakan Lks hal 26 A dan B",
+            dueDate: new Date("2024-08-05"),
+            status: "kelar",
+        },
+        {
+            subject: "PKN",
+            description: "Setor Hafalan UUD",
+            dueDate: new Date("2024-08-06"),
             status: "belum kelar",
         },
         {
-            subject: "Akidah Akhlak",
-            description: "Menulis nama nama hari akhir beserta dalil nya",
-            dueDate: new Date("2024-08-15"),
-            status: "belum kelar",
+            subject: "IT",
+            description: "Kerjakan Lks Hal 12 Bagian A",
+            dueDate: new Date("2024-08-06"),
+            status: "kelar",
         },
         {
-            subject: "Akidah Akhlak",
-            description: "Menulis ciri ciri perilaku orang yang mencerminkan sifat kepada hari akhir/kiamat",
-            dueDate: new Date("2024-08-15"),
-            status: "belum kelar",
+            subject: "SKI",
+            description: "Kerjakan Lks Hal 9 Bagian A",
+            dueDate: new Date("2024-08-07"),
+            status: "kelar",
         },
         {
-            subject: "Qurdist",
-            description: "Menghafalkan Hadist Yang Ada Di Halaman 44 Dan 49 (Masih 3 Minggu Lagi)",
-            dueDate: new Date("2024-08-30"),
+            subject: "Tahfidz",
+            description: "Setoran Hafalan",
+            dueDate: new Date("2024-08-08"),
             status: "belum kelar",
         },
+    ];
+
+    const examData = [
+        {
+            subject: "Matematika",
+            description: "Remedial",
+            date: new Date("2024-08-20"),
+            status: "N/A",
+        },
+        {
+            subject: "Bahasa Inggris",
+            description: "Ulangan mengenai hewan yang sudah di pelajari di materi sblm nya serta menyusun kata",
+            date: new Date("2024-08-20"),
+            status: "N/A",
+        },
+        // Tambahkan detail ulangan lainnya di sini
     ];
 
     const subjectColors = {
@@ -90,12 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "IT": "seagreen",
         "SKI": "seagreen",
         "Tahfidz": "seagreen",
-        "FIKIH": "seagreen",
-        "MTK": "seagreen",
-        "Akidah Akhlak": "seagreen",
-        "Bahasa Arab": "seagreen",
-        "IPS": "seagreen",
-        "Qurdist": "seagreen",
+        // Tambahkan warna untuk mata pelajaran lainnya sesuai kebutuhan
     };
 
     function updateDateTime() {
@@ -108,9 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
             hour: "2-digit",
             minute: "2-digit",
             second: "2-digit",
+            timeZoneName: "short"
         });
         document.getElementById("datetime").innerText = dateTimeString;
+        
+
+        // Update location and timezone
+        navigator.geolocation.getCurrentPosition(position => {
+            const { latitude, longitude } = position.coords;
+            document.getElementById("location").innerText = `Lokasi: Lat ${latitude.toFixed(2)}, Long ${longitude.toFixed(2)} (WIB)`;
+        });
     }
+
+    
 
     function renderSchedule() {
         const tableBody = document.querySelector("#schedule-table tbody");
@@ -128,6 +142,42 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 tableBody.appendChild(row);
             });
+        });
+    }
+
+    function renderExams() {
+        const examTableBody = document.querySelector("#exam-table tbody");
+        examTableBody.innerHTML = '';
+        examData.forEach((exam) => {
+            const examRow = document.createElement("tr");
+
+            const dateString = exam.date.toLocaleString("id-ID", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            });
+
+            // Menentukan warna berdasarkan status
+            const statusColor = exam.status === "kelar" ? "green" : "red";
+
+            // Menentukan warna berdasarkan nama pelajaran
+            const subjectColor = subjectColors[exam.subject] || "black";
+
+            examRow.innerHTML = `
+                <td style="color: ${subjectColor}">${exam.subject}</td>
+                <td>${exam.description}</td>
+                <td>${dateString}</td>
+                <td style="color: ${statusColor}">${exam.status}</td>
+            `;
+            examTableBody.appendChild(examRow);
+
+            const notificationTime = new Date(exam.date);
+            notificationTime.setDate(notificationTime.getDate() - 1);
+            notificationTime.setHours(19, 0, 0); // Set waktu ke jam 8 malam sehari sebelumnya
+            if (notificationTime > new Date()) {
+                scheduleNotification(notificationTime, `Ulangan ${exam.subject}`);
+            }
         });
     }
 
@@ -187,10 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(updateDateTime, 1000);
 
     renderSchedule();
+    renderExams();
     renderTasks();
-
-    const audio = document.getElementById('background-music');
-    audio.remove().catch(error => {
-        console.log('Autoplay prevented:', error);
-    });
 });
