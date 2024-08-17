@@ -38,40 +38,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "Bahasa Indonesia",
-            description: "Kerjakan Lks Hal 15 Asesment Formatif 3 Beserta 2 Soal Hots Di Hal 16",
-            dueDate: new Date("2024-08-05"),
-            status: "kelar",
-        },
-        {
-            subject: "SBK (Jika Sudah Menggambar)",
-            description: "Kerjakan Lks hal 26 A dan B",
-            dueDate: new Date("2024-08-05"),
-            status: "kelar",
+            subject: "IPS",
+            description: "Kerjakan lks hal 20 serta pemantik belajar",
+            dueDate: new Date("2024-08-20"),
+            status: "belum kelar",
         },
         {
             subject: "PKN",
-            description: "Setor Hafalan UUD",
-            dueDate: new Date("2024-08-06"),
+            description: "baca bukpet hal 14 - 20",
+            dueDate: new Date("2024-08-20"),
             status: "belum kelar",
         },
         {
-            subject: "IT",
-            description: "Kerjakan Lks Hal 12 Bagian A",
-            dueDate: new Date("2024-08-06"),
+            subject: "Akidah Akhlak",
+            description: "Menulis dalil yang berhubungan dengan hari akhir",
+            dueDate: new Date("2024-08-22"),
             status: "kelar",
         },
         {
-            subject: "SKI",
-            description: "Kerjakan Lks Hal 9 Bagian A",
-            dueDate: new Date("2024-08-07"),
-            status: "kelar",
-        },
-        {
-            subject: "Tahfidz",
-            description: "Setoran Hafalan",
-            dueDate: new Date("2024-08-08"),
+            subject: "Akidah Akhlak",
+            description: "Menulis nama nama hari akhir beserta dalil nya",
+            dueDate: new Date("2024-08-22"),
             status: "belum kelar",
+        },
+        {
+            subject: "Akidah Akhlak",
+            description: "Tulis lah perilaku orang yang mencerminkan sifat kepada hari akhir",
+            dueDate: new Date("2024-08-22"),
+            status: "kelar",
         },
     ];
 
