@@ -93,6 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "IT": "seagreen",
         "SKI": "seagreen",
         "Tahfidz": "seagreen",
+        "IPS": "seagreen",
+        "Akidah Akhlak": "seagreen",
         // Tambahkan warna untuk mata pelajaran lainnya sesuai kebutuhan
     };
 
