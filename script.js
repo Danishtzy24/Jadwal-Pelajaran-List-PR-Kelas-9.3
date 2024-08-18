@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const scheduleData = [
         { day: "Senin", subjects: [
-            { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
+            { name: "SBK", teacher: "Ida Farida, S.Ag" },
             { name: "IPS", teacher: "Eko Suwarmo, S.Pd" },
             { name: "PJOK", teacher: "Rismanto, S.Pd., MA" },
             { name: "Bahasa Inggris", teacher: "Siti Suryani, S.Pd" },
-            { name: "SBK", teacher: "Ida Farida, S.Ag" }
+            { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" }
         ]},
         { day: "Selasa", subjects: [
             { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
         { day: "Kamis", subjects: [
             { name: "Aqidah Akhlaq", teacher: "Dra. Hj. Nursaena" },
             { name: "FIKIH", teacher: "Ahmad Zakaria, Lc" },
-            { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd" },
-            { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
-            { name: "Bahasa Arab (1 jam)", teacher: "H. Taufik Husein, SS., M.Pd" }
+            { name: "Bahasa Arab", teacher: "H. Taufik Husein, SS., M.Pd" },
+            { name: "PKN (1 Jam)", teacher: "Lilik Haryani, S.Pd" },
+            { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd" }
         ]},
         { day: "Jumat", subjects: [
             { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
