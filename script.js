@@ -50,6 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "belum kelar",
         },
 {
+            subject: "Bahasa Indonesia",
+            description: "kerjakan buku paket halaman 23 soal model AKM",
+            dueDate: new Date("2024-08-20"),
+            status: "belum kelar",
+        },
+
+{
             subject: "IPS",
             description: "Globalisasi (pengertian umum,pengertian menurut 3 - 5 tokoh, dampak postif/negatif, bidang globalisasi, upaya menghadapi globalisasi)",
             dueDate: new Date("2024-08-21"),
