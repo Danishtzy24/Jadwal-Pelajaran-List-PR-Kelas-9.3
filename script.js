@@ -49,6 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-08-20"),
             status: "belum kelar",
         },
+{
+            subject: "IPS",
+            description: "Globalisasi (pengertian umum,pengertian menurut 3 - 5 tokoh, dampak postif/negatif, bidang globalisasi, upaya menghadapi globalisasi)",
+            dueDate: new Date("2024-08-21"),
+            status: "kelar",
+        },
+
         {
             subject: "Akidah Akhlak",
             description: "Menulis dalil yang berhubungan dengan hari akhir",
