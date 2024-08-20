@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             subject: "Bahasa Inggris",
             description: "Ulangan Bahasa Inggris susulan bagi Danish",
-            date: new Date("2024-08-20"),
+            date: new Date("2024-08-26"),
             status: "N/A",
         },
         // Tambahkan detail ulangan lainnya di sini
