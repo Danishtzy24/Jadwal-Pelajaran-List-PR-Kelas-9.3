@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             subject: "Matematika",
             description: "Remedial",
-            date: new Date("2024-08-20"),
+            date: new Date("2024-08-21"),
             status: "N/A",
         },
         {
