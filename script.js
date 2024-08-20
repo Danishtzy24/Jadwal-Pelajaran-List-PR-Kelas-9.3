@@ -39,25 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskData = [
         {
             subject: "IPS",
-            description: "Kerjakan lks hal 20 serta pemantik belajar",
-            dueDate: new Date("2024-08-19"),
-            status: "kelar",
-        },
-        {
-            subject: "PKN",
-            description: "baca bukpet hal 14 - 20",
-            dueDate: new Date("2024-08-20"),
-            status: "belum kelar",
-        },
-{
-            subject: "Bahasa Indonesia",
-            description: "kerjakan buku paket halaman 23 soal model AKM",
-            dueDate: new Date("2024-08-20"),
-            status: "belum kelar",
-        },
-
-{
-            subject: "IPS",
             description: "Globalisasi (pengertian umum,pengertian menurut 3 - 5 tokoh, dampak postif/negatif, bidang globalisasi, upaya menghadapi globalisasi)",
             dueDate: new Date("2024-08-21"),
             status: "kelar",
@@ -73,13 +54,19 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Akidah Akhlak",
             description: "Menulis nama nama hari akhir beserta dalil nya",
             dueDate: new Date("2024-08-22"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "Akidah Akhlak",
             description: "Tulis lah perilaku orang yang mencerminkan sifat kepada hari akhir",
             dueDate: new Date("2024-08-22"),
             status: "kelar",
+        },
+        {
+            subject: "IT",
+            description: "Mengerjakan Lks Asesmen Sumatif 2 (kayaknya) / Lks Bab 2",
+            dueDate: new Date("2024-08-27"),
+            status: "blm kelar",
         },
     ];
 
@@ -92,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             subject: "Bahasa Inggris",
-            description: "Ulangan mengenai hewan yang sudah di pelajari di materi sblm nya serta menyusun kata",
+            description: "Ulangan Bahasa Inggris susulan bagi Danish",
             date: new Date("2024-08-20"),
             status: "N/A",
         },
