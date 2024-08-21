@@ -39,27 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskData = [
         {
             subject: "IPS",
-            description: "Globalisasi (pengertian umum,pengertian menurut 3 - 5 tokoh, dampak postif/negatif, bidang globalisasi, upaya menghadapi globalisasi)",
-            dueDate: new Date("2024-08-21"),
-            status: "kelar",
+            description: "Revolusi Industri (pengertian, 3 tokoh, sebab sebab, akibat revolusi industri positif dan negatif)",
+            dueDate: new Date("2024-08-26"),
+            status: "belum kelar",
+        },
+        {
+            subject: "SKI",
+            description: "Kerjakan lks ski hal 29 bagian a dan b",
+            dueDate: new Date("2024-08-26"),
+            status: "belum kelar",
         },
 
         {
             subject: "Akidah Akhlak",
             description: "Menulis dalil yang berhubungan dengan hari akhir",
-            dueDate: new Date("2024-08-22"),
+            dueDate: new Date("2024-08-29"),
             status: "kelar",
         },
         {
             subject: "Akidah Akhlak",
             description: "Menulis nama nama hari akhir beserta dalil nya",
-            dueDate: new Date("2024-08-22"),
+            dueDate: new Date("2024-08-29"),
             status: "kelar",
         },
         {
             subject: "Akidah Akhlak",
             description: "Tulis lah perilaku orang yang mencerminkan sifat kepada hari akhir",
-            dueDate: new Date("2024-08-22"),
+            dueDate: new Date("2024-08-29"),
             status: "kelar",
         },
         {
@@ -73,8 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const examData = [
         {
             subject: "Matematika",
-            description: "Remedial",
-            date: new Date("2024-08-21"),
+            description: "Remedial susulan bagi Danish dan yang gak masuk",
+            date: new Date("2024-08-27"),
             status: "N/A",
         },
         {
