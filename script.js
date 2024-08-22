@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "IPS",
             description: "Revolusi Industri (pengertian, 3 tokoh, sebab sebab, akibat revolusi industri positif dan negatif)",
             dueDate: new Date("2024-08-26"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "SKI",
