@@ -47,7 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "SKI",
             description: "Kerjakan lks ski hal 29 bagian a dan b",
             dueDate: new Date("2024-08-26"),
-            status: "belum kelar",
+            status: "kelar",
+        },
+        {
+            subject: "IPA",
+            description: "Kerjakan lks IPA hal 35 no 1 sampai 20",
+            dueDate: new Date("2024-08-28"),
+            status: "kelar",
         },
 
         {
