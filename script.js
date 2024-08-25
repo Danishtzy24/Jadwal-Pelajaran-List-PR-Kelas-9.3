@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "IT",
             description: "Mengerjakan Lks Asesmen Sumatif 2 (kayaknya) / Lks Bab 2",
             dueDate: new Date("2024-08-27"),
-            status: "blm kelar",
+            status: "kelar",
         },
     ];
 
