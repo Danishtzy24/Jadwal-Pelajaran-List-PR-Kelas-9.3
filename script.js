@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             subject: "SKI",
             description: "Kerjakan lks ski hal 29 bagian a dan b",
-            dueDate: new Date("2024-08-26"),
+            dueDate: new Date("2024-08-28"),
             status: "kelar",
         },
         {
