@@ -38,16 +38,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "IPS",
-            description: "Revolusi Industri (pengertian, 3 tokoh, sebab sebab, akibat revolusi industri positif dan negatif)",
-            dueDate: new Date("2024-08-26"),
-            status: "kelar",
+            subject: "Bahasa Indonesia",
+            description: "Kerjakan lks hal 24 asesment formatif 1",
+            dueDate: new Date("2024-08-27"),
+            status: "belum kelar",
         },
+        {
+            subject: "Bahasa Inggris",
+            description: "kerjakan lks hal 29 Tengah Semester 1",
+            dueDate: new Date("2024-08-27"),
+            status: "belum kelar",
+        },
+        
         {
             subject: "SKI",
             description: "Kerjakan lks ski hal 29 bagian a dan b",
             dueDate: new Date("2024-08-28"),
             status: "kelar",
+        },
+        {
+            subject: "IPS",
+            description: "Revolusi Industri (Tambahin kapan dan dimana revolusi industri terjadi,Negara yang berdampak pada revolusi industri)",
+            dueDate: new Date("2024-08-28"),
+            status: "belum kelar",
         },
         {
             subject: "IPA",
