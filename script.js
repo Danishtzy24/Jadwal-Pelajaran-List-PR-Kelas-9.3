@@ -38,15 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "Bahasa Indonesia",
-            description: "Kerjakan lks hal 24 asesment formatif 1",
-            dueDate: new Date("2024-08-27"),
-            status: "belum kelar",
-        },
-        {
-            subject: "Bahasa Inggris",
-            description: "kerjakan lks hal 29 Tengah Semester 1",
-            dueDate: new Date("2024-08-27"),
+            subject: "Matematika",
+            description: "kerjakan lks hal 25 uraian no 20",
+            dueDate: new Date("2024-08-28"),
             status: "belum kelar",
         },
         
@@ -88,31 +82,33 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
+            subject: "Bahasa Indonesia",
+            description: "1.Apakah teks prosedur itu?, 2.Sebutkan ciri ciri teks prosedur?, 3.Apa tujuan dan fungsi teks prosedur?, 4.Struktur teks prosedur?, 5.Unsur Unsur kebahasaan teks prosedur?.",
+            dueDate: new Date("2024-08-30"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Bahasa Inggris",
+            description: "buatlah cerita menggunakan kertas folio (pakai recount teks)",
+            dueDate: new Date("2024-09-02"),
+            status: "belum kelar",
+        },
+        {
             subject: "IT",
-            description: "Mengerjakan Lks Asesmen Sumatif 2 (kayaknya) / Lks Bab 2",
-            dueDate: new Date("2024-08-27"),
+            description: "Membuat laporan keuangan menggunakan wps/microsoft excel (xls)",
+            dueDate: new Date("2024-09-03"),
             status: "kelar",
         },
     ];
 
     const examData = [
-        {
-            subject: "Matematika",
-            description: "Remedial susulan bagi Danish dan yang gak masuk",
-            date: new Date("2024-08-27"),
-            status: "N/A",
-        },
-        {
-            subject: "Bahasa Inggris",
-            description: "Ulangan Bahasa Inggris susulan bagi Danish",
-            date: new Date("2024-08-26"),
-            status: "N/A",
-        },
+        
         // Tambahkan detail ulangan lainnya di sini
     ];
 
     const subjectColors = {
         "Bahasa Indonesia": "seagreen",
+        "Bahasa Inggris": "seagreen",
         "PJOK": "seagreen",
         "SBK (Jika Sudah Menggambar)": "seagreen",
         "PKN": "seagreen",
