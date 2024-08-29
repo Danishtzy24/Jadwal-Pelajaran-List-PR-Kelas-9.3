@@ -36,51 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ]}
     ];
 
-    const taskData = [
-        {
-            subject: "Matematika",
-            description: "kerjakan lks hal 25 uraian no 20",
-            dueDate: new Date("2024-08-28"),
-            status: "belum kelar",
-        },
-        
-        {
-            subject: "SKI",
-            description: "Kerjakan lks ski hal 29 bagian a dan b",
-            dueDate: new Date("2024-08-28"),
-            status: "kelar",
-        },
-        {
-            subject: "IPS",
-            description: "Revolusi Industri (Tambahin kapan dan dimana revolusi industri terjadi,Negara yang berdampak pada revolusi industri)",
-            dueDate: new Date("2024-08-28"),
-            status: "belum kelar",
-        },
-        {
-            subject: "IPA",
-            description: "Kerjakan lks IPA hal 35 no 1 sampai 20",
-            dueDate: new Date("2024-08-28"),
-            status: "kelar",
-        },
-
-        {
-            subject: "Akidah Akhlak",
-            description: "Menulis dalil yang berhubungan dengan hari akhir",
-            dueDate: new Date("2024-08-29"),
-            status: "kelar",
-        },
-        {
-            subject: "Akidah Akhlak",
-            description: "Menulis nama nama hari akhir beserta dalil nya",
-            dueDate: new Date("2024-08-29"),
-            status: "kelar",
-        },
-        {
-            subject: "Akidah Akhlak",
-            description: "Tulis lah perilaku orang yang mencerminkan sifat kepada hari akhir",
-            dueDate: new Date("2024-08-29"),
-            status: "kelar",
-        },
+    const taskData = [
         {
             subject: "Bahasa Indonesia",
             description: "1.Apakah teks prosedur itu?, 2.Sebutkan ciri ciri teks prosedur?, 3.Apa tujuan dan fungsi teks prosedur?, 4.Struktur teks prosedur?, 5.Unsur Unsur kebahasaan teks prosedur?.",
