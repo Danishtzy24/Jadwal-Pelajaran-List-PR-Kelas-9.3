@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Bahasa Inggris",
             description: "buatlah cerita menggunakan kertas folio (pakai recount teks)",
             dueDate: new Date("2024-09-02"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "IT",
