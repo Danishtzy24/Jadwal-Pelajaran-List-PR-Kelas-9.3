@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Bahasa Indonesia",
             description: "1.Apakah teks prosedur itu?, 2.Sebutkan ciri ciri teks prosedur?, 3.Apa tujuan dan fungsi teks prosedur?, 4.Struktur teks prosedur?, 5.Unsur Unsur kebahasaan teks prosedur?.",
             dueDate: new Date("2024-09-02"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "Bahasa Inggris",
