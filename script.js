@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const taskData = [
+        {
+            subject: "PKN",
+            description: "kerjakan lks hal 20 - 21 tes tertulis",
+            dueDate: new Date("2024-09-03"),
+            status: "kelar",
+        },
          {
             subject: "Bahasa Indonesia",
             description: "kerjakan Bukpet hal 45 - 48 PG dibuku tulis jawabannya",
