@@ -37,23 +37,29 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const taskData = [
-
-        {
+         {
             subject: "Bahasa Indonesia",
-            description: "1.Apakah teks prosedur itu?, 2.Sebutkan ciri ciri teks prosedur?, 3.Apa tujuan dan fungsi teks prosedur?, 4.Struktur teks prosedur?, 5.Unsur Unsur kebahasaan teks prosedur?.",
-            dueDate: new Date("2024-09-02"),
-            status: "kelar",
+            description: "kerjakan Bukpet hal 45 - 48 PG dibuku tulis jawabannya",
+            dueDate: new Date("2024-09-03"),
+            status: "belum kelar",
         },
         {
-            subject: "Bahasa Inggris",
-            description: "buatlah cerita menggunakan kertas folio (pakai recount teks)",
-            dueDate: new Date("2024-09-02"),
+            subject: "IPS",
+            description: "Kerjakan IPS bukpet hal 19 dan 20 (Tugas individu 1.1 dan Latihan 1.1)",
+            dueDate: new Date("2024-09-04"),
             status: "kelar",
         },
+        
         {
             subject: "IT",
             description: "Membuat laporan keuangan menggunakan wps/microsoft excel (xls)",
             dueDate: new Date("2024-09-03"),
+            status: "kelar",
+        },
+         {
+            subject: "SBK",
+            description: "kerjakan lks seni rupa hal 20 serta hari senin depan disuruh membawa pensil dan buku gambar",
+            dueDate: new Date("2024-09-09"),
             status: "kelar",
         },
     ];
