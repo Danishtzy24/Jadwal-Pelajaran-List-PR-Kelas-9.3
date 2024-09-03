@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "IT",
             description: "Merangkum bukpet bab 4 di email nya pak Farel",
             dueDate: new Date("2024-09-10"),
-            status: "belum kelar",
+            status: "kelar",
         },
     ];
 
