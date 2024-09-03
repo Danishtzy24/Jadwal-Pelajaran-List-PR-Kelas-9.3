@@ -76,7 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const examData = [
-        
+        {
+            subject: "Bahasa Indonesia",
+            description: "akan di kasih pertanyaan dari bu Nur'ain",
+            dueDate: new Date("2024-09-06"),
+            status: "kelar",
+        },
         // Tambahkan detail ulangan lainnya di sini
     ];
 
@@ -92,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "IPS": "seagreen",
         "Akidah Akhlak": "seagreen",
         "IPA": "seagreen",
+        "MTK": "seagreen",
         // Tambahkan warna untuk mata pelajaran lainnya sesuai kebutuhan
     };
 
