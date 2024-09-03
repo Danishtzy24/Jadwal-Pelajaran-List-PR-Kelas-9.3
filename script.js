@@ -76,6 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const examData = [
+        {
+            subject: "Bahasa Indonesia",
+            description: "bagi yang remedial akan di kasih pertanyaan oleh bu Nur'ain tergantung nilainya (kkm 80)",
+            date: new Date("2024-09-06"),
+            status: "N/A",
+        },
         // Tambahkan detail ulangan lainnya di sini
     ];
 
