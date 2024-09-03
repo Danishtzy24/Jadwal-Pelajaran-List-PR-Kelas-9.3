@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "SBK",
             description: "kerjakan lks seni rupa hal 20 serta hari senin depan disuruh membawa pensil dan buku gambar",
             dueDate: new Date("2024-09-09"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "PKN",
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             subject: "IT",
-            description: "Merangkum bab 4 di email nya pak Farel",
+            description: "Merangkum bukpet bab 4 di email nya pak Farel",
             dueDate: new Date("2024-09-10"),
             status: "belum kelar",
         },
