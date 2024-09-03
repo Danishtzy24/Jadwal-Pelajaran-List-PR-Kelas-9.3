@@ -38,15 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "PKN",
-            description: "kerjakan lks hal 20 - 21 tes tertulis",
-            dueDate: new Date("2024-09-03"),
-            status: "kelar",
-        },
-         {
-            subject: "Bahasa Indonesia",
-            description: "kerjakan Bukpet hal 45 - 48 PG dibuku tulis jawabannya",
-            dueDate: new Date("2024-09-03"),
+            subject: "MTK",
+            description: "Membuat tabel tentang bangun ruang. gambar (+nama), luas permukaan dan volume",
+            dueDate: new Date("2024-09-04"),
             status: "belum kelar",
         },
         {
@@ -55,18 +49,29 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-09-04"),
             status: "kelar",
         },
-        
         {
-            subject: "IT",
-            description: "Membuat laporan keuangan menggunakan wps/microsoft excel (xls)",
-            dueDate: new Date("2024-09-03"),
-            status: "kelar",
+            subject: "Bahasa Indonesia",
+            description: "Membuat video teks prosedur (ber kelompok)",
+            dueDate: new Date("2024-09-06"),
+            status: "belum kelar",
         },
          {
             subject: "SBK",
             description: "kerjakan lks seni rupa hal 20 serta hari senin depan disuruh membawa pensil dan buku gambar",
             dueDate: new Date("2024-09-09"),
-            status: "kelar",
+            status: "belum kelar",
+        },
+        {
+            subject: "PKN",
+            description: "Tulis di buku (Kapan disahkan nya pancasila sebagai dasar negara)",
+            dueDate: new Date("2024-09-10"),
+            status: "belum kelar",
+        },
+        {
+            subject: "IT",
+            description: "Merangkum bab 4 di email nya pak Farel",
+            dueDate: new Date("2024-09-10"),
+            status: "belum kelar",
         },
     ];
 
@@ -79,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Bahasa Indonesia": "seagreen",
         "Bahasa Inggris": "seagreen",
         "PJOK": "seagreen",
-        "SBK (Jika Sudah Menggambar)": "seagreen",
+        "SBK": "seagreen",
         "PKN": "seagreen",
         "IT": "seagreen",
         "SKI": "seagreen",
