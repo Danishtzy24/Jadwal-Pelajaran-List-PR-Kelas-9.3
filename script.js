@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "MTK",
             description: "Membuat tabel tentang bangun ruang. gambar (+nama), luas permukaan dan volume",
             dueDate: new Date("2024-09-04"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "IPS",
