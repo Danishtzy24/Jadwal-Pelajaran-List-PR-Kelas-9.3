@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "PKN",
             description: "Tulis di buku (Kapan disahkan nya pancasila sebagai dasar negara)",
             dueDate: new Date("2024-09-10"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "IT",
