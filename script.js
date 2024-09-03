@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description: "akan di kasih pertanyaan dari bu Nur'ain",
             dueDate: new Date("2024-09-06"),
             status: "kelar",
-        },
+        }
         // Tambahkan detail ulangan lainnya di sini
     ];
 
