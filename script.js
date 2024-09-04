@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "Akidah",
+            subject: "Akidah Akhlak",
             description: "Kerjakan lks hal 11 bagian A dan B",
             dueDate: new Date("2024-09-05"),
             status: "kelar",
