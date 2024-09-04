@@ -38,22 +38,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "MTK",
-            description: "Membuat tabel tentang bangun ruang. gambar (+nama), luas permukaan dan volume",
-            dueDate: new Date("2024-09-04"),
-            status: "kelar",
-        },
-        {
-            subject: "IPS",
-            description: "Kerjakan IPS bukpet hal 19 dan 20 (Tugas individu 1.1 dan Latihan 1.1)",
-            dueDate: new Date("2024-09-04"),
+            subject: "Akidah",
+            description: "Kerjakan lks hal 11 bagian A dan B",
+            dueDate: new Date("2024-09-05"),
             status: "kelar",
         },
         {
             subject: "Bahasa Indonesia",
             description: "Membuat video teks prosedur (ber kelompok)",
             dueDate: new Date("2024-09-06"),
-            status: "belum kelar",
+            status: "kelar",
+        },
+        {
+            subject: "IPA",
+            description: "Kerjakan Lks Asesment Sumatif Tengah Semester 1 hal 39 bagian A, B, C. D dam E",
+            dueDate: new Date("2024-09-06"),
+            status: "kelar",
         },
          {
             subject: "SBK",
@@ -71,6 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "IT",
             description: "Merangkum bukpet bab 4 di email nya pak Farel",
             dueDate: new Date("2024-09-10"),
+            status: "kelar",
+        },
+        {
+            subject: "SKI",
+            description: "Kerjakan Lks tugas mandiri hal 39 dan 41",
+            dueDate: new Date("2024-09-011"),
             status: "kelar",
         },
     ];
