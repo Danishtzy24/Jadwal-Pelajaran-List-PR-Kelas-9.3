@@ -44,6 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
+            subject: "Tahfidz",
+            description: "Setoran",
+            dueDate: new Date("2024-09-05"),
+            status: "kelar",
+        },
+        {
             subject: "Bahasa Indonesia",
             description: "Membuat video teks prosedur (ber kelompok)",
             dueDate: new Date("2024-09-06"),
