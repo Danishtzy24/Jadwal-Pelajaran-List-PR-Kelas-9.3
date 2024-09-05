@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             subject: "PKN",
-            description: "Tulis di buku (Kapan disahkan nya pancasila sebagai dasar negara)",
+            description: "presentasi per kelompok",
             dueDate: new Date("2024-09-10"),
-            status: "kelar",
+            status: "belum kelar",
         },
         {
             subject: "IT",
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             subject: "SKI",
             description: "Kerjakan Lks tugas mandiri hal 39 dan 41",
-            dueDate: new Date("2024-09-011"),
+            dueDate: new Date("2024-09-11"),
             status: "kelar",
         },
     ];
