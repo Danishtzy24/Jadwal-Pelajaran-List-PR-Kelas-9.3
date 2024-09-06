@@ -37,30 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const taskData = [
-        {
-            subject: "Akidah Akhlak",
-            description: "Kerjakan lks hal 11 bagian A dan B",
-            dueDate: new Date("2024-09-05"),
-            status: "kelar",
-        },
-        {
-            subject: "Tahfidz",
-            description: "Setoran",
-            dueDate: new Date("2024-09-05"),
-            status: "kelar",
-        },
-        {
-            subject: "Bahasa Indonesia",
-            description: "Membuat video teks prosedur (ber kelompok)",
-            dueDate: new Date("2024-09-06"),
-            status: "kelar",
-        },
-        {
-            subject: "IPA",
-            description: "Kerjakan Lks Asesment Sumatif Tengah Semester 1 hal 39 bagian A, B, C. D dam E",
-            dueDate: new Date("2024-09-06"),
-            status: "kelar",
-        },
          {
             subject: "SBK",
             description: "kerjakan lks seni rupa hal 20 serta hari senin depan disuruh membawa pensil dan buku gambar",
@@ -80,6 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
+            subject: "Qurdist",
+            description: "Setoran 2 Hadist di Bukpet hal 47 dan 48 (setoran di hari rabu langsung 2 hadist sekaligus)",
+            dueDate: new Date("2024-09-11"),
+            status: "belum kelar",
+        },
+        {
             subject: "SKI",
             description: "Kerjakan Lks tugas mandiri hal 39 dan 41",
             dueDate: new Date("2024-09-11"),
@@ -88,12 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const examData = [
-        {
-            subject: "Bahasa Indonesia",
-            description: "bagi yang remedial akan di kasih pertanyaan oleh bu Nur'ain tergantung nilainya (kkm 80)",
-            date: new Date("2024-09-06"),
-            status: "N/A",
-        },
         // Tambahkan detail ulangan lainnya di sini
     ];
 
