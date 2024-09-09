@@ -37,12 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const taskData = [
-         {
-            subject: "SBK",
-            description: "kerjakan lks seni rupa hal 20 serta hari senin depan disuruh membawa pensil dan buku gambar",
-            dueDate: new Date("2024-09-09"),
-            status: "kelar",
-        },
         {
             subject: "PKN",
             description: "presentasi per kelompok",
@@ -62,10 +56,28 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "belum kelar",
         },
         {
+            subject: "IPS",
+            description: "Kerjakan Bukpet IPS hal 38 Tugas Individu 1.3 dan Latihan 1.3",
+            dueDate: new Date("2024-09-11"),
+            status: "kelar",
+        },
+        {
+            subject: "PJOK",
+            description: "Kerjakan LKS Hal 15 Bagian A sampai E",
+            dueDate: new Date("2024-09-11"),
+            status: "kelar",
+        },
+        {
             subject: "SKI",
             description: "Kerjakan Lks tugas mandiri hal 39 dan 41",
             dueDate: new Date("2024-09-11"),
             status: "kelar",
+        },
+        {
+            subject: "SBK",
+            description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol Bekas",
+            dueDate: new Date("2024-09-16"),
+            status: "belum kelar",
         },
     ];
 
