@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const subjectColors = {
         "Bahasa Indonesia": "seagreen",
         "Bahasa Inggris": "seagreen",
+        "Qurdist": "seagreen",
         "PJOK": "seagreen",
         "SBK": "seagreen",
         "PKN": "seagreen",
