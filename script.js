@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "MTK",
             description: "Kerjakan Lks MTK hal 38 Asesment Formatif 2 No 1 sampai 3",
             dueDate: new Date("2024-09-11"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "Qurdist",
