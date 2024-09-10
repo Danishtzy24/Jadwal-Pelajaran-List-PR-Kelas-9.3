@@ -38,16 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "PKN",
-            description: "presentasi per kelompok",
-            dueDate: new Date("2024-09-10"),
+            subject: "MTK",
+            description: "Kerjakan Lks MTK hal 38 Asesment Formatif 2 No 1 sampai 3",
+            dueDate: new Date("2024-09-11"),
             status: "belum kelar",
-        },
-        {
-            subject: "IT",
-            description: "Merangkum bukpet bab 4 di email nya pak Farel",
-            dueDate: new Date("2024-09-10"),
-            status: "kelar",
         },
         {
             subject: "Qurdist",
@@ -74,9 +68,27 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
+            subject: "PKN",
+            description: "presentasi per kelompok",
+            dueDate: new Date("2024-09-12"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Bahasa Indonesia",
+            description: "1 Kelompok Melakukan Wawancara",
+            dueDate: new Date("2024-09-13"),
+            status: "belum kelar",
+        },
+        {
             subject: "SBK",
-            description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol Bekas",
+            description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol 1.5 Liter Bekas (di isi sama sampah pelastik agar kokoh)",
             dueDate: new Date("2024-09-16"),
+            status: "belum kelar",
+        },
+        {
+            subject: "IT",
+            description: "Membuat Vlog tentang tanaman",
+            dueDate: new Date("2024-12-1"),
             status: "belum kelar",
         },
     ];
