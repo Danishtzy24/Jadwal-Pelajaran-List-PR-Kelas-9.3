@@ -86,6 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "belum kelar",
         },
         {
+            subject: "IPS",
+            description: "Kerjakan Lks Halaman 42 - 43 bagian uraian dan remedial",
+            dueDate: new Date("2024-09-16"),
+            status: "kelar",
+        },
+        {
             subject: "IT",
             description: "Membuat Vlog tentang tanaman",
             dueDate: new Date("2024-12-1"),
