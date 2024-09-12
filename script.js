@@ -38,36 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "MTK",
-            description: "Kerjakan Lks MTK hal 38 Asesment Formatif 2 No 1 sampai 3",
-            dueDate: new Date("2024-09-11"),
-            status: "kelar",
-        },
-        {
-            subject: "Qurdist",
-            description: "Setoran 2 Hadist di Bukpet hal 47 dan 48 (setoran di hari rabu langsung 2 hadist sekaligus)",
-            dueDate: new Date("2024-09-11"),
-            status: "belum kelar",
-        },
-        {
-            subject: "IPS",
-            description: "Kerjakan Bukpet IPS hal 38 Tugas Individu 1.3 dan Latihan 1.3",
-            dueDate: new Date("2024-09-11"),
-            status: "kelar",
-        },
-        {
-            subject: "PJOK",
-            description: "Kerjakan LKS Hal 15 Bagian A sampai E",
-            dueDate: new Date("2024-09-11"),
-            status: "kelar",
-        },
-        {
-            subject: "SKI",
-            description: "Kerjakan Lks tugas mandiri hal 39 dan 41",
-            dueDate: new Date("2024-09-11"),
-            status: "kelar",
-        },
-        {
             subject: "PKN",
             description: "presentasi per kelompok",
             dueDate: new Date("2024-09-12"),
