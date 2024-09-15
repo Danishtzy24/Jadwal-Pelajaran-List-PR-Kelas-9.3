@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             subject: "SBK",
             description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol 1.5 Liter Bekas (di isi sama sampah pelastik agar kokoh)",
-            dueDate: new Date("2024-09-16"),
+            dueDate: new Date("2024-09-23"),
             status: "belum kelar",
         },
         {
