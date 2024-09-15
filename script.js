@@ -62,6 +62,18 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
+            subject: "Akidah Akhlak",
+            description: "Buatlah Profil (sesuai per 2 baris meja) perjuagan sampe sukses, jasa, dampaknya dan perjalanan masa hidupnya (profil).",
+            dueDate: new Date("2024-09-19"),
+            status: "kelar",
+        },
+        {
+            subject: "Akidah Akhlak",
+            description: "Kerjakan Lks Halaman 26 Bagian A dan C",
+            dueDate: new Date("2024-09-19"),
+            status: "kelar",
+        },
+        {
             subject: "IT",
             description: "Membuat Vlog tentang tanaman",
             dueDate: new Date("2024-12-1"),
