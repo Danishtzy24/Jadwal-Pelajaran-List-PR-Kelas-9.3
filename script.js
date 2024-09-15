@@ -50,12 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "belum kelar",
         },
         {
-            subject: "SBK",
-            description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol 1.5 Liter Bekas (di isi sama sampah pelastik agar kokoh)",
-            dueDate: new Date("2024-09-23"),
-            status: "belum kelar",
-        },
-        {
             subject: "IPS",
             description: "Kerjakan Lks Halaman 42 - 43 bagian uraian dan remedial",
             dueDate: new Date("2024-09-16"),
@@ -72,6 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
             description: "Kerjakan Lks Halaman 26 Bagian A dan C",
             dueDate: new Date("2024-09-19"),
             status: "kelar",
+        },
+        {
+            subject: "SBK",
+            description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol 1.5 Liter Bekas (di isi sama sampah pelastik agar kokoh)",
+            dueDate: new Date("2024-09-23"),
+            status: "belum kelar",
         },
         {
             subject: "IT",
