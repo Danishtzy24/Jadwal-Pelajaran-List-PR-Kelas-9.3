@@ -44,6 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
+            subject: "SKI",
+            description: "Kerjakan Lks Halaman 43 - 45 bagian A",
+            dueDate: new Date("2024-09-18"),
+            status: "kelar",
+        },
+        {
             subject: "Akidah Akhlak",
             description: "Kerjakan Lks Halaman 26 Bagian A dan C",
             dueDate: new Date("2024-09-19"),
