@@ -38,18 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "PKN",
-            description: "presentasi per kelompok",
-            dueDate: new Date("2024-09-17"),
-            status: "belum kelar",
-        },
-        {
-            subject: "Bahasa Indonesia",
-            description: "1 Kelompok Melakukan Wawancara",
-            dueDate: new Date("2024-09-17"),
-            status: "belum kelar",
-        },
-        {
             subject: "IPS",
             description: "Kerjakan Lks Halaman 42 - 43 bagian uraian dan remedial",
             dueDate: new Date("2024-09-18"),
