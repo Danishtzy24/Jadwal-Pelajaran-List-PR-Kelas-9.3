@@ -62,6 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
+            subject: "Bahasa Indonesia",
+            description: "Buatlah prosedur esai yang bertema tentant lingkungan sekitar (ada dihalaman 34 lks)",
+            dueDate: new Date("2024-09-20"),
+            status: "belum kelar",
+        },
+        {
             subject: "SBK",
             description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol 1.5 Liter Bekas (di isi sama sampah pelastik agar kokoh)",
             dueDate: new Date("2024-09-23"),
