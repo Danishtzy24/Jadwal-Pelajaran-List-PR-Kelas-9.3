@@ -38,18 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "Akidah Akhlak",
-            description: "Kerjakan Lks Halaman 26 Bagian A dan C",
-            dueDate: new Date("2024-09-19"),
-            status: "kelar",
-        },
-        {
-            subject: "Akidah Akhlak",
-            description: "Buatlah Profil (sesuai per 2 baris meja) perjuagan sampe sukses, jasa, dampaknya dan perjalanan masa hidupnya (profil).",
-            dueDate: new Date("2024-09-19"),
-            status: "kelar",
-        },
-        {
             subject: "Bahasa Indonesia",
             description: "Buatlah prosedur esai yang bertema tentant lingkungan sekitar (ada dihalaman 34 lks)",
             dueDate: new Date("2024-09-20"),
