@@ -38,15 +38,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "Bahasa Indonesia",
-            description: "Buatlah prosedur esai yang bertema tentant lingkungan sekitar (ada dihalaman 34 lks)",
-            dueDate: new Date("2024-09-20"),
+            subject: "Qurdist",
+            description: "Menulis 2 Hadist Hal 47 - 48 bukpet qurdist sebanyak 3 kali dibagian arab nya dan 1 kali di bagian Artinya (1 hadist = 3 kal arab, 1 kali terjemahan) dikumpulkan secepatnya",
+            dueDate: new Date("2024-09-23"),
             status: "belum kelar",
         },
         {
             subject: "SBK",
             description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol 1.5 Liter Bekas (di isi sama sampah pelastik agar kokoh)",
             dueDate: new Date("2024-09-23"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Bahasa Indonesia",
+            description: "Kerjakan LKS Bahasa Indonesia Hal 35 no 1 - 5 dan soal hots hal 36",
+            dueDate: new Date("2024-09-23"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Bahasa Indonesia",
+            description: "Buatlah prosedur esai yang bertema tentang lingkungan sekitar (ada dihalaman 34 lks)",
+            dueDate: new Date("2024-09-23"),
+            status: "belum kelar",
+        },
+        {
+            subject: "IPA",
+            description: "Kerjakan LKS Latihan 3 hal 49 no 1 - 5",
+            dueDate: new Date("2024-09-25"),
             status: "belum kelar",
         },
         {
