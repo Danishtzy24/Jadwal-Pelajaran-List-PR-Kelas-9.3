@@ -53,13 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Bahasa Indonesia",
             description: "Kerjakan LKS Bahasa Indonesia Hal 35 no 1 - 5 dan soal hots hal 36",
             dueDate: new Date("2024-09-23"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "Bahasa Indonesia",
             description: "Buatlah prosedur esai yang bertema tentang lingkungan sekitar (ada dihalaman 34 lks)",
             dueDate: new Date("2024-09-23"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "IPA",
