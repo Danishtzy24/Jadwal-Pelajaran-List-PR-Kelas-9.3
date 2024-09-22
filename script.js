@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             subject: "Bahasa Indonesia",
-            description: "Buatlah prosedur esai yang bertema tentang lingkungan sekitar (ada dihalaman 34 lks)",
+            description: "Buatlah prosedur esai yang bertema tentang lingkungan sekitar (ada dihalaman 34 lks) dan juga jangan lupa bawa laptop (1 kelompok 1)",
             dueDate: new Date("2024-09-23"),
             status: "kelar",
         },
