@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             subject: "Bahasa Inggris",
-            description: "Kerjakan Bukpet Bahasa Inggris hal 47 - 48 (activity",
+            description: "Kerjakan Bukpet Bahasa Inggris hal 47 - 48 (activity 5 dibuku tulis dengan soal) dan activity 6 tarik garis",
             dueDate: new Date("2024-09-24"),
             status: "kelar",
         },
