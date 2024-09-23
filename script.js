@@ -39,26 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskData = [
         {
             subject: "Qurdist",
-            description: "Menulis 2 Hadist Hal 47 - 48 bukpet qurdist sebanyak 3 kali dibagian arab nya dan 1 kali di bagian Artinya (1 hadist = 3 kal arab, 1 kali terjemahan) dikumpulkan secepatnya",
-            dueDate: new Date("2024-09-23"),
-            status: "belum kelar",
-        },
-        {
-            subject: "SBK",
-            description: "SBK Praktek Membuat Barang Barang (Bebas) Menggunakan Botol 1.5 Liter Bekas (di isi sama sampah pelastik agar kokoh)",
-            dueDate: new Date("2024-09-23"),
+            description: "Kumpulin buku tulis qurdist secepat nya (bagi yang blm ngumpulin)",
+            dueDate: new Date("2024-09-24"),
             status: "belum kelar",
         },
         {
             subject: "Bahasa Indonesia",
-            description: "Kerjakan LKS Bahasa Indonesia Hal 35 no 1 - 5 dan soal hots hal 36",
-            dueDate: new Date("2024-09-23"),
+            description: "Kerjakan Lks hal 37 - 39 no 1 - 15",
+            dueDate: new Date("2024-09-24"),
             status: "kelar",
         },
         {
-            subject: "Bahasa Indonesia",
-            description: "Buatlah prosedur esai yang bertema tentang lingkungan sekitar (ada dihalaman 34 lks) dan juga jangan lupa bawa laptop (1 kelompok 1)",
-            dueDate: new Date("2024-09-23"),
+            subject: "Bahasa Inggris",
+            description: "Kerjakan Bukpet Bahasa Inggris hal 47 - 48 (activity",
+            dueDate: new Date("2024-09-24"),
             status: "kelar",
         },
         {
