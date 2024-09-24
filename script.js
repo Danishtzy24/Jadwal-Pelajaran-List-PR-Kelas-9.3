@@ -44,15 +44,15 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "belum kelar",
         },
         {
-            subject: "Bahasa Indonesia",
-            description: "Kerjakan Lks hal 37 - 39 no 1 - 15",
-            dueDate: new Date("2024-09-24"),
-            status: "kelar",
+            subject: "MTK",
+            description: "Bsk bawa mie (4 sehat 5 sempurna) dan tumbler serta mangan bersama 10 menit sblm istirahat pertama",
+            dueDate: new Date("2024-09-25"),
+            status: "belum kelar",
         },
         {
-            subject: "Bahasa Inggris",
-            description: "Kerjakan Bukpet Bahasa Inggris hal 47 - 48 (activity 5 dibuku tulis dengan soal) dan activity 6 tarik garis",
-            dueDate: new Date("2024-09-24"),
+            subject: "MTK",
+            description: "kerjakan lks mtk hal 58 no 1,3,4 dan remedial hal 61 no 4 dan 5",
+            dueDate: new Date("2024-09-25"),
             status: "kelar",
         },
         {
@@ -60,6 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
             description: "Kerjakan LKS Latihan 3 hal 49 no 1 - 5",
             dueDate: new Date("2024-09-25"),
             status: "belum kelar",
+        },
+        {
+            subject: "PKN",
+            description: "Kerjakan LKS hal 17 asesmen formatif 2 dan soal hots",
+            dueDate: new Date("2024-09-26"),
+            status: "kelar",
+        },
+        {
+            subject: "Bahasa Inggris",
+            description: "Kerjakan Bukpet hal 50 activity 1 no 1 sampai 10",
+            dueDate: new Date("2024-09-30"),
+            status: "kelar",
         },
         {
             subject: "IT",
