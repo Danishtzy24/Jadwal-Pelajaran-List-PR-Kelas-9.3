@@ -61,6 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-09-25"),
             status: "belum kelar",
         },
+{
+            subject: "Bahasa Arab",
+            description: "Terjemahkan Bukpet Hal 16",
+            dueDate: new Date("2024-09-25"),
+            status: "belum kelar",
+        },
         {
             subject: "PKN",
             description: "Kerjakan LKS hal 17 asesmen formatif 2 dan soal hots",
