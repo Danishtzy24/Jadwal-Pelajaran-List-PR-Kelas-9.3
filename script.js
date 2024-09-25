@@ -38,36 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "Qurdist",
-            description: "Kumpulin buku tulis qurdist secepat nya (bagi yang blm ngumpulin)",
-            dueDate: new Date("2024-09-24"),
-            status: "belum kelar",
-        },
-        {
-            subject: "MTK",
-            description: "Bsk bawa mie (4 sehat 5 sempurna) dan tumbler serta mangan bersama 10 menit sblm istirahat pertama",
-            dueDate: new Date("2024-09-25"),
-            status: "belum kelar",
-        },
-        {
-            subject: "MTK",
-            description: "kerjakan lks mtk hal 58 no 1,3,4 dan remedial hal 61 no 4 dan 5",
-            dueDate: new Date("2024-09-25"),
-            status: "kelar",
-        },
-        {
-            subject: "IPA",
-            description: "Kerjakan LKS Latihan 3 hal 49 no 1 - 5",
-            dueDate: new Date("2024-09-25"),
-            status: "belum kelar",
-        },
-{
-            subject: "Bahasa Arab",
-            description: "Terjemahkan Bukpet Hal 16",
-            dueDate: new Date("2024-09-25"),
-            status: "belum kelar",
-        },
-        {
             subject: "PKN",
             description: "Kerjakan LKS hal 17 asesmen formatif 2 dan soal hots",
             dueDate: new Date("2024-09-26"),
