@@ -38,14 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "PKN",
-            description: "Kerjakan LKS hal 17 asesmen formatif 2 dan soal hots",
-            dueDate: new Date("2024-09-26"),
+            subject: "Bahasa Inggris",
+            description: "Kerjakan Bukpet hal 50 activity 1 no 1 sampai 10",
+            dueDate: new Date("2024-09-30"),
             status: "kelar",
         },
         {
-            subject: "Bahasa Inggris",
-            description: "Kerjakan Bukpet hal 50 activity 1 no 1 sampai 10",
+            subject: "Bahasa Indonesia",
+            description: "Kerjakan Lks hal 40 (Asesmen Sumatif Tengah Semester 1)",
             dueDate: new Date("2024-09-30"),
             status: "kelar",
         },
