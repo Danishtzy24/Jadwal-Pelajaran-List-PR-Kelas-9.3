@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             subject: "Bahasa Indonesia",
             description: "Kerjakan bukpet bahasa indonesia hal 141",
-            dueDate: new Date("2024-10-04),
+            dueDate: new Date("2024-10-04"),
             status: "belum kelar",
         },
         {
