@@ -50,6 +50,18 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
+            subject: "PKN",
+            description: "Kerjakan Bukpet hal 56 pilihan ganda no 1 - 10 dan pilihan ganda kompleks no 1,2 dan 3",
+            dueDate: new Date("2024-10-03"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Bahasa Indonesia",
+            description: "Kerjakan bukpet bahasa indonesia hal 141",
+            dueDate: new Date("2024-10-04),
+            status: "belum kelar",
+        },
+        {
             subject: "IT",
             description: "Membuat Vlog tentang tanaman",
             dueDate: new Date("2024-12-1"),
