@@ -44,16 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "kelar",
         },
         {
-            subject: "Bahasa Indonesia",
-            description: "Kerjakan Lks hal 40 (Asesmen Sumatif Tengah Semester 1)",
-            dueDate: new Date("2024-09-30"),
-            status: "kelar",
-        },
-        {
             subject: "PKN",
             description: "Kerjakan Bukpet hal 56 pilihan ganda no 1 - 10 dan pilihan ganda kompleks no 1,2 dan 3",
             dueDate: new Date("2024-10-03"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "Bahasa Indonesia",
@@ -61,6 +55,19 @@ document.addEventListener("DOMContentLoaded", () => {
             dueDate: new Date("2024-10-04"),
             status: "belum kelar",
         },
+        {
+            subject: "Qurdist",
+            description: "Menjelaskan sebuah hadist kejujuran dan takaran timbangan minimal 2.5 menit",
+            dueDate: new Date("2024-10-04"),
+            status: "belum kelar",
+        },
+        {
+            subject: "SKI",
+            description: "Ulangan",
+            dueDate: new Date("2024-10-09"),
+            status: "belum kelar",
+        },
+        
         {
             subject: "IT",
             description: "Membuat Vlog tentang tanaman",
