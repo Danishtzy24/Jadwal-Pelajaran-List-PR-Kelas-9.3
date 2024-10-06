@@ -36,17 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
         ]}
     ];
 
-    const taskData = [
-        {
-            subject: "Bahasa Indonesia",
-            description: "Kerjakan bukpet bahasa indonesia hal 141",
-            dueDate: new Date("2024-10-04"),
-            status: "kelar",
-        },
-        {
-            subject: "Qurdist",
-            description: "Menjelaskan sebuah hadist kejujuran dan takaran timbangan minimal 2.5 menit",
-            dueDate: new Date("2024-10-04"),
+    const taskData = [
+         {
+            subject: "Bahasa Inggris",
+            description: "Kerkom lks hal 38 activity 5",
+            dueDate: new Date("2024-10-07"),
             status: "belum kelar",
         },
         {
