@@ -39,14 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskData = [
          {
             subject: "Bahasa Inggris",
-            description: "Kerkom lks hal 38 activity 5",
-            dueDate: new Date("2024-10-07"),
+            description: "hari ini presentasi",
+            dueDate: new Date("2024-10-08"),
+            status: "belum kelar",
+        },
+        {
+            subject: "IPS",
+            description: tulis jenis jenis uang (kartal dan  giral) beserta ciri² nya",
+            dueDate: new Date("2024-10-14"),
             status: "belum kelar",
         },
         {
             subject: "SKI",
             description: "Ulangan",
-            dueDate: new Date("2024-10-09"),
+            dueDate: new Date("2024-10-16"),
             status: "belum kelar",
         },
         
