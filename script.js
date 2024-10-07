@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             subject: "IPS",
-            description: tulis jenis jenis uang (kartal dan  giral) beserta ciri² nya",
+            description: "tulis jenis jenis uang (kartal dan  giral) beserta ciri² nya",
             dueDate: new Date("2024-10-14"),
             status: "belum kelar",
         },
