@@ -44,6 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "belum kelar",
         },
         {
+            subject: "Bahasa Indonesia",
+            description: " Kerjakan Bukpet Hal 143 kegiatan 2",
+            dueDate: new Date("2024-10-14"),
+            status: "belum kelar",
+        },
+        {
             subject: "IPS",
             description: "tulis jenis jenis uang (kartal dan  giral) beserta ciri² nya",
             dueDate: new Date("2024-10-14"),
