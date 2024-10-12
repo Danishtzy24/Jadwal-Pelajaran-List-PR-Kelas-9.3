@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskData = [
          {
             subject: "Bahasa Inggris",
-            description: "hari ini presentasi",
-            dueDate: new Date("2024-10-08"),
+            description: "Presentasi LKS Hal 38",
+            dueDate: new Date("2024-14-08"),
             status: "belum kelar",
         },
         {
