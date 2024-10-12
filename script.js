@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "IPA",
             description: "Mengerjakan Buku Paket Hal 182",
             dueDate: new Date("2024-10-16"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "SKI",
