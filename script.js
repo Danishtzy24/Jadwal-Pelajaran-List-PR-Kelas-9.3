@@ -47,18 +47,30 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Bahasa Indonesia",
             description: " Kerjakan Bukpet Hal 143 kegiatan 2",
             dueDate: new Date("2024-10-14"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "IPS",
             description: "tulis jenis jenis uang (kartal dan  giral) beserta ciri² nya",
             dueDate: new Date("2024-10-14"),
+            status: "kelar",
+        },
+        {
+            subject: "IPA",
+            description: "Mengerjakan Buku Paket Hal 182",
+            dueDate: new Date("2024-10-16"),
             status: "belum kelar",
         },
         {
             subject: "SKI",
             description: "Ulangan",
             dueDate: new Date("2024-10-16"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Akidah Akhlak",
+            description: "Mencari Informasi Tentang Khalifah Umar Bin Khattab dan Ali Bin Abi Thalib (Contoh : Mengapa Ali Bin Abi Thalib Diberi Gelar R.A",
+            dueDate: new Date("2024-10-17"),
             status: "belum kelar",
         },
         
