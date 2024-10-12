@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
          {
             subject: "Bahasa Inggris",
             description: "Presentasi LKS Hal 38",
-            dueDate: new Date("2024-14-08"),
+            dueDate: new Date("2024-10-14"),
             status: "belum kelar",
         },
         {
