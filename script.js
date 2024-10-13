@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Akidah Akhlak",
             description: "Mencari Informasi Tentang Khalifah Umar Bin Khattab dan Ali Bin Abi Thalib (Contoh : Mengapa Ali Bin Abi Thalib Diberi Gelar R.A",
             dueDate: new Date("2024-10-17"),
-            status: "belum kelar",
+            status: "kelar",
         },
         
         {
