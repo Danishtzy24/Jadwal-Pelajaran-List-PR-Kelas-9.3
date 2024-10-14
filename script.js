@@ -37,23 +37,23 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const taskData = [
-         {
-            subject: "Bahasa Inggris",
-            description: "Presentasi LKS Hal 38",
-            dueDate: new Date("2024-10-14"),
-            status: "belum kelar",
-        },
         {
             subject: "Bahasa Indonesia",
             description: " Kerjakan Bukpet Hal 143 kegiatan 2",
-            dueDate: new Date("2024-10-14"),
+            dueDate: new Date("2024-10-15"),
             status: "kelar",
         },
         {
             subject: "IPS",
-            description: "tulis jenis jenis uang (kartal dan  giral) beserta ciri² nya",
-            dueDate: new Date("2024-10-14"),
-            status: "kelar",
+            description: "tulis jenis jenis uang, pengertian, ciri ciri dan fungsi uang",
+            dueDate: new Date("2024-10-16"),
+            status: "belum kelar",
+        },
+        {
+            subject: "PJOK",
+            description: "Kerjakn LKS Sumatif 3 dan 4",
+            dueDate: new Date("2024-10-16"),
+            status: "belum kelar",
         },
         {
             subject: "IPA",
