@@ -41,13 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "IPS",
             description: "tulis jenis jenis uang, pengertian, ciri ciri dan fungsi uang",
             dueDate: new Date("2024-10-16"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "PJOK",
             description: "Kerjakn LKS Sumatif 3 dan 4",
             dueDate: new Date("2024-10-16"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "IPA",
