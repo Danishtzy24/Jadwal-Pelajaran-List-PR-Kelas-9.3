@@ -38,36 +38,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const taskData = [
         {
-            subject: "IPS",
-            description: "tulis jenis jenis uang, pengertian, ciri ciri dan fungsi uang",
-            dueDate: new Date("2024-10-16"),
-            status: "kelar",
-        },
-        {
-            subject: "PJOK",
-            description: "Kerjakn LKS Sumatif 3 dan 4",
-            dueDate: new Date("2024-10-16"),
-            status: "kelar",
-        },
-        {
-            subject: "IPA",
-            description: "Mengerjakan Buku Paket Hal 182",
-            dueDate: new Date("2024-10-16"),
-            status: "kelar",
-        },
-        {
-            subject: "SKI",
-            description: "Ulangan",
-            dueDate: new Date("2024-10-16"),
-            status: "belum kelar",
-        },
-        {
             subject: "Akidah Akhlak",
             description: "Mencari Informasi Tentang Khalifah Umar Bin Khattab dan Ali Bin Abi Thalib (Contoh : Mengapa Ali Bin Abi Thalib Diberi Gelar R.A",
             dueDate: new Date("2024-10-17"),
             status: "kelar",
         },
-        
+        {
+            subject: "PJOK",
+            description: "Kerjakn LKS Sumatif 3 dan 4",
+            dueDate: new Date("2024-10-21"),
+            status: "kelar",
+        },
         {
             subject: "IT",
             description: "Membuat Vlog tentang tanaman",
