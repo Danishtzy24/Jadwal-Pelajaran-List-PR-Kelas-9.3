@@ -36,18 +36,24 @@ document.addEventListener("DOMContentLoaded", () => {
         ]}
     ];
 
-    const taskData = [
-        {
-            subject: "Akidah Akhlak",
-            description: "Mencari Informasi Tentang Khalifah Umar Bin Khattab dan Ali Bin Abi Thalib (Contoh : Mengapa Ali Bin Abi Thalib Diberi Gelar R.A",
-            dueDate: new Date("2024-10-17"),
-            status: "kelar",
-        },
+    const taskData = [
         {
             subject: "PJOK",
             description: "Kerjakn LKS Sumatif 3 dan 4",
             dueDate: new Date("2024-10-21"),
             status: "kelar",
+        },
+        {
+            subject: "PKN",
+            description: "Ulangan PKN Bab 2",
+            dueDate: new Date("2024-10-22"),
+            status: "belum kelar",
+        },
+        {
+            subject: "Akidah Akhlak",
+            description: "Bukti nyata Umar bin Khattab seorang pemimpin yang tegas,Bukti Umar bin Khattab dekat dengan rakyat,Apa hubungan kepemimpinan Umar bin Khattab dengan kepemimpinan yang sekarang. Jawab pertanyaan",
+            dueDate: new Date("2024-10-24"),
+            status: "belum kelar",
         },
         {
             subject: "IT",
