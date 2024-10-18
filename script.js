@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ]}
     ];
 
-    const taskData = [
+    const taskData = [
+
         {
             subject: "PJOK",
             description: "Kerjakn LKS Sumatif 3 dan 4",
@@ -50,9 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
             status: "belum kelar",
         },
         {
-            subject: "Akidah Akhlak",
-            description: "Bukti nyata Umar bin Khattab seorang pemimpin yang tegas,Bukti Umar bin Khattab dekat dengan rakyat,Apa hubungan kepemimpinan Umar bin Khattab dengan kepemimpinan yang sekarang. Jawab pertanyaan",
-            dueDate: new Date("2024-10-24"),
+            subject: "Qurdist",
+            description: "Kerjakn LKS Qurdist Halaman  56 - 58 bagian A, B, dan C",
+            dueDate: new Date("2024-10-25"),
             status: "belum kelar",
         },
         {
