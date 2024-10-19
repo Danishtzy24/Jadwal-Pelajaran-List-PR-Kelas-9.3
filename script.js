@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "PJOK",
             description: "Kerjakn LKS Sumatif 3 dan 4",
             dueDate: new Date("2024-10-21"),
-            status: "kelar",
+            status: "belum kelar",
         },
         {
             subject: "PKN",
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Akidah Akhlak",
             description: "1.Bukti nyata Umar bin Khattab adalah pemimpin yang tegas, 2.Bukti Umar bin Khattab dekat dengan rakyat nya, 3.Apa hubungan nya kepemimpinan Umar bin Khattab dengan kepemimpinan sekarang. Jawablah 3 pertanyaan ini",
             dueDate: new Date("2024-10-24"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "Qurdist",
