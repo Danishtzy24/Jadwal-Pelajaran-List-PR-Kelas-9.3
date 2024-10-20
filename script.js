@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
             subject: "Qurdist",
             description: "Kerjakn LKS Qurdist Halaman  56 - 58 bagian A, B, dan C",
             dueDate: new Date("2024-10-25"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "IT",
