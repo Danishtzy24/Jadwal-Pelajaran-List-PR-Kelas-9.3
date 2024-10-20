@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
             subject: "PJOK",
-            description: "Kerjakn LKS Sumatif 3 dan 4",
+            description: "Kerjakan LKS Sumatif 3 dan 4",
             dueDate: new Date("2024-10-21"),
-            status: "belum kelar",
+            status: "kelar",
         },
         {
             subject: "PKN",
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             subject: "Qurdist",
-            description: "Kerjakn LKS Qurdist Halaman  56 - 58 bagian A, B, dan C",
+            description: "Kerjakan LKS Qurdist Halaman  56 - 58 bagian A, B, dan C",
             dueDate: new Date("2024-10-25"),
             status: "kelar",
         },
