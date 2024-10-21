@@ -4,20 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Pelajaran dan PR Kelas 9.3</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image" href="Logo MTsN 2 Kelas 9.3.png">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; 
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #2c3e50; 
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Chalkboard', sans-serif;
+        }
+        header h2 {
+            margin-top: 5px;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        #datetime {
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .card {
+            background-color: #ecf0f1; /* Background kertas */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 550px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-container th, .table-container td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        .table-container th {
+            background-color: #3498db; /* Warna cerah untuk header */
+            color: #fff;
+        }
+        .day-name {
+            background-color: #2980b9;
+            color: #fff;
+            font-weight: bold;
+        }
+        .subject-name {
+            padding: 10px 0;
+            color: #333;
+        }
+        .teacher-name {
+            display: block;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .task-item {
+            background-color: #dff9fb;
+            padding: 10px;
+            border: 1px solid #3498db;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        .task-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #2980b9;
+        }
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .card {
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
     <header>
         <h1>Jadwal Pelajaran dan PR Kelas 9.3</h1>
-        <h2 style="margin-top: 5px; margin-bottom: 20px;">By Danish</h2>
+        <h2>By Danish</h2>
         <div id="datetime"></div>
     </header>
     <main>
-        <section id="schedule" class="half">
+        <section id="schedule" class="card">
             <h2>Jadwal Pelajaran</h2>
-            <div id="schedule-table-container">
+            <div class="table-container">
                 <table id="schedule-table">
                     <thead>
                         <tr>
@@ -30,43 +134,149 @@
                 </table>
             </div>
         </section>
-    
-        <section id="tasks" class="half">
+
+        <section id="tasks" class="card">
             <h2>Daftar Tugas</h2>
             <div id="tasks-list">
-                <table>
-                    <tr>
-                        <th>Nama Tugas</th>
-                        <th>Deskripsi</th>
-                        <th>Tanggal</th>
-                        <th>Status</th>
-                    </tr>
-                    <!-- Tugas akan diisi di sini -->
-                </table>
-            </div>
-        </section>
-    
-        <section id="exams" class="half">
-            <h2>Jadwal Ulangan</h2>
-            <div id="exam-table-container">
-                <table id="exam-table">
-                    <thead>
-                        <tr>
-                            <th>Mata Pelajaran</th>
-                            <th>Deskripsi</th>
-                            <th>Tanggal</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Ulangan akan diisi di sini -->
-                    </tbody>
-                </table>
+                <!-- Tugas akan diisi di sini -->
             </div>
         </section>
     </main>
-    
-    
-    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scheduleData = [
+                { day: "Senin", subjects: [
+                    { name: "SBK", teacher: "Ida Farida, S.Ag" },
+                    { name: "IPS", teacher: "Eko Suwarmo, S.Pd" },
+                    { name: "PJOK", teacher: "Rismanto, S.Pd., MA" },
+                    { name: "Bahasa Inggris", teacher: "Siti Suryani, S.Pd" },
+                    { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" }
+                ]},
+                { day: "Selasa", subjects: [
+                    { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
+                    { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
+                    { name: "Matematika", teacher: "Lely Farhani, S.Pd" },
+                    { name: "Bahasa Inggris", teacher: "Siti Suryani, S.Pd" },
+                    { name: "IT", teacher: "Muhammad Farrel Sidqi, S.Pd" }
+                ]},
+                { day: "Rabu", subjects: [
+                    { name: "IPA", teacher: "H. Faqih Usman, M.Pd" },
+                    { name: "MTK", teacher: "Lely Farhani, S.Pd" },
+                    { name: "SKI", teacher: "Hj. Emi Karyati, S.Ag" },
+                    { name: "IPS", teacher: "Eko Suwarmo, S.Pd" },
+                    { name: "Bahasa Arab (1 jam)", teacher: "H. Taufik Husein, SS., M.Pd" },
+                    { name: "PJOK (1 jam)", teacher: "Rismanto, S.Pd.,MA" }
+                ]},
+                { day: "Kamis", subjects: [
+                    { name: "Aqidah Akhlaq", teacher: "Dra. Hj. Nursaena" },
+                    { name: "FIKIH", teacher: "Ahmad Zakaria, Lc" },
+                    { name: "Bahasa Arab", teacher: "H. Taufik Husein, SS., M.Pd" },
+                    { name: "PKN (1 Jam)", teacher: "Lilik Haryani, S.Pd" },
+                    { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd" }
+                ]},
+                { day: "Jumat", subjects: [
+                    { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
+                    { name: "IPA", teacher: "H. Faqih Usman, M.Pd" },
+                    { name: "Qurdist", teacher: "Arini Saila Haq, Lc" }
+                ]}
+            ];
+
+            const taskData = [
+                {
+                    subject: "PJOK",
+                    description: "Kerjakan LKS Sumatif 3 dan 4",
+                    dueDate: new Date("2024-10-21"),
+                    status: "kelar",
+                },
+                {
+                    subject: "PKN",
+                    description: "Ulangan PKN Bab 2",
+                    dueDate: new Date("2024-10-22"),
+                    status: "belum kelar",
+                },
+                {
+                    subject: "Akidah Akhlak",
+                    description: "1.Bukti nyata Umar bin Khattab adalah pemimpin yang tegas, 2.Bukti Umar bin Khattab dekat dengan rakyatnya, 3.Apa hubungannya dengan kepemimpinan sekarang.",
+                    dueDate: new Date("2024-10-24"),
+                    status: "kelar",
+                },
+                {
+                    subject: "Qurdist",
+                    description: "Kerjakan LKS Qurdist Halaman 56 - 58 bagian A, B, dan C",
+                    dueDate: new Date("2024-10-25"),
+                    status: "kelar",
+                },
+                {
+                    subject: "IT",
+                    description: "Membuat Vlog tentang tanaman",
+                    dueDate: new Date("2024-12-1"),
+                    status: "belum kelar",
+                },
+            ];
+
+            function updateDateTime() {
+                const now = new Date();
+                const dateTimeString = now.toLocaleString("id-ID", {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+                });
+                document.getElementById('datetime').textContent = dateTimeString;
+            }
+
+            function renderSchedule() {
+                const tableBody = document.querySelector("#schedule-table tbody");
+                tableBody.innerHTML = '';
+                scheduleData.forEach(daySchedule => {
+                    const row = document.createElement('tr');
+                    const cell = document.createElement('td');
+                    cell.className = 'day-name';
+                    cell.textContent = daySchedule.day;
+                    cell.colSpan = 2;
+                    tableBody.appendChild(row);
+                    row.appendChild(cell);
+
+                    daySchedule.subjects.forEach(subject => {
+                        const subjectRow = document.createElement('tr');
+                        const subjectCell = document.createElement('td');
+                        const teacherCell = document.createElement('td');
+                        subjectCell.className = 'subject-name';
+                        teacherCell.className = 'teacher-name';
+                        subjectCell.textContent = subject.name;
+                        teacherCell.textContent = subject.teacher;
+                        subjectRow.appendChild(subjectCell);
+                        subjectRow.appendChild(teacherCell);
+                        tableBody.appendChild(subjectRow);
+                    });
+                });
+            }
+
+            function renderTasks() {
+    const taskContainer = document.querySelector("#tasks-list");
+    taskContainer.innerHTML = '';
+    taskData.forEach(task => {
+        const taskElement = document.createElement("div");
+        taskElement.className = "task-item";
+        
+        // Tentukan warna berdasarkan status
+        const statusColor = task.status.toLowerCase() === "kelar" ? "green" : "red";
+        
+        taskElement.innerHTML = `
+            <strong>${task.subject}</strong>
+            <span> - Deskripsi: ${task.description}</span>
+            <br>
+            <span>Tenggat: ${task.dueDate.toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            <br>
+            <span style="color: ${statusColor};">Tugasnya Danish: ${task.status}</span>
+        `;
+        taskContainer.appendChild(taskElement);
+    });
+}
+
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+            renderSchedule();
+            renderTasks();
+        });
+    </script>
 </body>
 </html>
