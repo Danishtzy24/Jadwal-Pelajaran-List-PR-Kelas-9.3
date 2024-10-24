@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="notranslate" translate="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -191,11 +191,11 @@
                 <div id="tasks-list">
                     <!-- Tugas akan diisi di sini -->
                 </div>
+                <button id="copy-tasks-button">Salin semua list tugas</button>
             </div>
         </section>
     </main>
 
-    <!-- Script tidak diubah seperti yang diminta -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const scheduleData = [
@@ -292,6 +292,7 @@
                 },
             ];
 
+
             function updateDateTime() {
                 const now = new Date();
                 const dateTimeString = now.toLocaleString("id-ID", {
@@ -328,26 +329,53 @@
             }
 
             function renderTasks() {
-    const taskContainer = document.querySelector("#tasks-list");
-    taskContainer.innerHTML = '';
-    taskData.forEach(task => {
-        const taskElement = document.createElement("div");
-        taskElement.className = "task-item";
-        
-        // Tentukan warna berdasarkan status
-        const statusColor = task.status.toLowerCase() === "kelar" ? "green" : "red";
-        
-        taskElement.innerHTML = `
-            <strong>${task.subject}</strong>
-            <span> - Deskripsi: ${task.description}</span>
-            <br>
-            <span>Tenggat: ${task.dueDate.toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
-            <br>
-            <span style="color: ${statusColor};">Tugasnya Danish: ${task.status}</span>
-        `;
-        taskContainer.appendChild(taskElement);
-    });
-}
+                const taskContainer = document.querySelector("#tasks-list");
+                taskContainer.innerHTML = '';
+                taskData.forEach(task => {
+                    const taskElement = document.createElement("div");
+                    taskElement.className = "task-item";
+                    
+                    // Tentukan warna berdasarkan status
+                    const statusColor = task.status.toLowerCase() === "kelar" ? "green" : "red";
+                    
+                    taskElement.innerHTML = `
+                        <strong>${task.subject}</strong>
+                        <span> - Deskripsi: ${task.description}</span>
+                        <br>
+                        <span>Tenggat: ${formatDate(task.dueDate)}</span>
+                        <br>
+                        <span style="color: ${statusColor};">Tugasnya Danish: ${task.status}</span>
+                    `;
+                    taskContainer.appendChild(taskElement);
+                });
+            }
+
+            function copyTasks() {
+                let output = '';
+
+                taskData.forEach(task => {
+                    output += `📌${formatDate(task.dueDate)}\n`;
+                    output += `${task.subject}\n`;
+                    output += `Deskripsi Tugas : ${task.description}\n`;
+                    output += `Tenggat : ${formatDate(task.dueDate)}\n\n`;
+                });
+
+                // Menyalin ke clipboard
+                navigator.clipboard.writeText(output).then(() => {
+                    alert('Daftar tugas telah disalin ke clipboard!');
+                }).catch(err => {
+                    console.error('Gagal menyalin: ', err);
+                });
+            }
+
+            // Fungsi untuk memformat tanggal
+            function formatDate(date) {
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', locale: 'id-ID' };
+                return date.toLocaleDateString('id-ID', options);
+            }
+
+            // Event listener untuk tombol
+            document.getElementById('copy-tasks-button').addEventListener('click', copyTasks);
 
             updateDateTime();
             setInterval(updateDateTime, 1000);
