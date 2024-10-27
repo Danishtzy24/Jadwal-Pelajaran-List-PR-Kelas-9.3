@@ -8,7 +8,7 @@
     <!-- Open Graph Metadata -->
     <meta property="og:title" content="Jadwal Pelajaran dan PR Kelas 9.3">
     <meta property="og:description" content="Lihat jadwal pelajaran dan daftar tugas untuk Kelas 9.3.">
-    <meta property="og:image" content="https://i.imgur.com/qYY2J21.png">
+    <meta property="og:image" content="https://imgur.com/a/YrxX9JW">
     <meta property="og:url" content="https://jadwal-pelajaran-list-pr-kelas-9-3.vercel.app/">
     <meta property="og:type" content="website">
 
@@ -239,36 +239,73 @@
                 { day: "Jumat", subjects: [
                     { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd" },
                     { name: "IPA", teacher: "H. Faqih Usman, M.Pd" },
-                    { name: "Matematika", teacher: "Lely Farhani, S.Pd" },
-                    { name: "PKN", teacher: "Lilik Haryani, S.Pd" },
-                    { name: "SKI", teacher: "Hj. Emi Karyati, S.Ag" }
-                ]},
-                { day: "Sabtu", subjects: [
-                    { name: "MTK", teacher: "Lely Farhani, S.Pd" },
-                    { name: "Bahasa Inggris", teacher: "Siti Suryani, S.Pd" }
+                    { name: "Qurdist", teacher: "Arini Saila Haq, Lc" }
                 ]}
             ];
 
             const taskData = [
                 {
-                    subject: "Akidah Akhlak",
-                    description: "Tugas Akidah Akhlak",
-                    dueDate: new Date("2024-10-30"),
-                    status: "Belum Kelar"
+                    subject: "IPS",
+                    description: "Menulis Pengertian Dari Income, Expenditure, Cash Flow, Asset, Liability, Net Worth, Loan, Interest, Investment, Portfolio, Debit, Credit",
+                    dueDate: new Date("2024-10-28"),
+                    status: "kelar",
                 },
                 {
-                    subject: "IPA",
-                    description: "Tugas Lab IPA",
-                    dueDate: new Date("2024-10-25"),
-                    status: "Kelar"
+                    subject: "PJOK",
+                    description: "Kerjakan LKS Sumatif 3 dan 4",
+                    dueDate: new Date("2024-10-28"),
+                    status: "kelar",
                 },
                 {
-                    subject: "Bahasa Inggris",
-                    description: "Essay Bahasa Inggris",
-                    dueDate: new Date("2024-10-27"),
-                    status: "Belum Kelar"
-                }
+                    subject: "PKN",
+                    description: "Ulangan PKN Bab 2",
+                    dueDate: new Date("2024-10-29"),
+                    status: "belum kelar",
+                },
+                {
+                    subject: "PKN",
+                    description: "Kerjakan Asesmen Formatif 2 Hal 39",
+                    dueDate: new Date("2024-10-29"),
+                    status: "kelar",
+                },
+                {
+                    subject: "MTK",
+                    description: "Kerjakan LKS hal 62 - 63 no 1 - 12",
+                    dueDate: new Date("2024-10-29"),
+                    status: "kelar",
+                },
+                {
+                    subject: "Akidah AKhlak",
+                    description: "Kerjakan Lks Penilaian Akhir Semester hal 33 Bagian B (dikertas lembar)",
+                    dueDate: new Date("2024-10-31"),
+                    status: "kelar",
+                },
+                {
+                    subject: "Fikih",
+                    description: "Kerjakan Lks Penilaian Akhir Semester hal 59 bagian A dan B",
+                    dueDate: new Date("2024-10-31"),
+                    status: "kelar",
+                },
+                {
+                    subject: "Qurdist",
+                    description: "Kerjakan LKS Qurdist Halaman 56 - 58 bagian A, B, dan C",
+                    dueDate: new Date("2024-11-1"),
+                    status: "kelar",
+                },
+                {
+                    subject: "Qurdist",
+                    description: "Presentasi Hadist",
+                    dueDate: new Date("2024-11-1"),
+                    status: "belum kelar",
+                },
+                {
+                    subject: "IT",
+                    description: "Membuat Vlog tentang tanaman",
+                    dueDate: new Date("2024-12-1"),
+                    status: "belum kelar",
+                },
             ];
+
 
             function updateDateTime() {
                 const now = new Date();
@@ -308,46 +345,30 @@
             function renderTasks() {
                 const taskContainer = document.querySelector("#tasks-list");
                 taskContainer.innerHTML = '';
-                const tasksByDate = {};
-
-                // Mengelompokkan tugas berdasarkan tanggal tenggat
                 taskData.forEach(task => {
-                    const dueDate = formatDate(task.dueDate);
-                    if (!tasksByDate[dueDate]) {
-                        tasksByDate[dueDate] = [];
-                    }
-                    tasksByDate[dueDate].push(task);
+                    const taskElement = document.createElement("div");
+                    taskElement.className = "task-item";
+                    
+                    // Tentukan warna berdasarkan status
+                    const statusColor = task.status.toLowerCase() === "kelar" ? "green" : "red";
+                    
+                    taskElement.innerHTML = `
+                        <strong>${task.subject}</strong>
+                        <span> - Deskripsi: ${task.description}</span>
+                        <br>
+                        <span>Tenggat: ${formatDate(task.dueDate)}</span>
+                        <br>
+                        <span style="color: ${statusColor};">Tugasnya Danish: ${task.status}</span>
+                    `;
+                    taskContainer.appendChild(taskElement);
                 });
-
-                // Menampilkan tugas berdasarkan tanggal yang telah dikelompokkan
-                for (const [dueDate, tasks] of Object.entries(tasksByDate)) {
-                    const dateElement = document.createElement("div");
-                    dateElement.innerHTML = `<strong>📌 ${dueDate}</strong>`;
-                    taskContainer.appendChild(dateElement);
-
-                    tasks.forEach(task => {
-                        const taskElement = document.createElement("div");
-                        taskElement.className = "task-item";
-                        
-                        // Tentukan warna berdasarkan status
-                        const statusColor = task.status.toLowerCase() === "kelar" ? "green" : "red";
-                        
-                        taskElement.innerHTML = `
-                            <strong>${task.subject}</strong>
-                            <span> - Deskripsi: ${task.description}</span>
-                            <br>
-                            <span style="color: ${statusColor};">Tugasnya Danish: ${task.status}</span>
-                        `;
-                        taskContainer.appendChild(taskElement);
-                    });
-                }
             }
 
             function copyTasks() {
                 let output = '';
 
                 taskData.forEach(task => {
-                    output += `📌 ${formatDate(task.dueDate)}\n`;
+                    output += `📌${formatDate(task.dueDate)}\n`;
                     output += `${task.subject}\n`;
                     output += `Deskripsi Tugas : ${task.description}\n`;
                     output += `Tenggat : ${formatDate(task.dueDate)}\n\n`;
