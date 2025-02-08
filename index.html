@@ -1,653 +1,483 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Motion Flow</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <link rel="manifest" href="manifest.json">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Sekolah Kelas 9.3</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
     :root {
-      --primary: #3f51b5;
-      --secondary: #f50057;
-      --bg: #121212;
-      --card-bg: #1e1e1e;
-      --text: #ffffff;
-      --subtext: #aaaaaa;
-      --border-radius: 16px;
-      --shadow: 0 4px 12px rgba(0,0,0,0.9);
+      --primary-color: #4f46e5;
+      --secondary-color: #818cf8;
+      --success-color: #22c55e;
+      --danger-color: #ef4444;
+      --background-light: #f8fafc;
+      --text-light: #334155;
+      --card-light: #ffffff;
+      --background-dark: #0f172a;
+      --text-dark: #e2e8f0;
+      --card-dark: #1e293b;
     }
 
-    :root.light {
-      --primary: #3f51b5;
-      --secondary: #f50057;
-      --bg: #f0f2f5;
-      --card-bg: #ffffff;
-      --text: #333;
-      --subtext: #777;
-      --border-radius: 16px;
-      --shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    body, header, .card {
-      transition: background 0.5s, color 0.5s;
-    }
-    
-    #splash {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--card-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 1s ease-out;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    #splash .logo {
-      max-width: 200px;
-      animation: scaleUp 1.5s ease-out forwards;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--background-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
     }
-    @keyframes scaleUp {
-      from { transform: scale(0); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+
+    .dark-mode {
+      background: var(--background-dark);
+      color: var(--text-dark);
     }
-    
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text); }
-    .container { max-width: 480px; margin: 0 auto; padding: 16px; }
-    
-    header {
-      background: linear-gradient(45deg, var(--primary), #6a82fb);
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 20px;
+
+    .header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      padding: 2rem 1.5rem;
+      color: white;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
-    header h1 { font-family: 'Montserrat', sans-serif; font-size: 24px; }
-    
-    .section { margin-bottom: 20px; }
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      padding: 16px;
-      margin-bottom: 16px;
-      transition: transform 0.3s ease;
-    }
-    .card:hover { transform: translateY(-3px); }
-    .card h2 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--primary);
-      margin-bottom: 12px;
-      text-align: center;
-    }
-    
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .stat {
-      background: var(--bg);
-      border-radius: var(--border-radius);
-      padding: 12px;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-    .stat .icon { font-size: 24px; color: var(--primary); margin-bottom: 6px; }
-    .stat .value { font-size: 22px; font-weight: bold; }
-    .stat .label { font-size: 14px; color: var(--subtext); }
-    
-    #currentSpeed {
-      text-align: center;
-      font-size: 18px;
-      margin-top: 8px;
-      font-weight: bold;
-      color: var(--primary);
-    }
-    
-    .btn-group { display: flex; gap: 12px; }
-    .btn {
-      flex: 1;
-      padding: 12px;
-      border: none;
-      border-radius: var(--border-radius);
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn:active { transform: translateY(2px); }
-    .btn-start { background: var(--primary); color: #fff; }
-    .btn-stop { background: var(--secondary); color: #fff; }
-    
-    .history-section h3 {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-    .history-item {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
-    .item-header {
-      background: var(--primary);
-      color: #fff;
-      padding: 12px;
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'Montserrat', sans-serif;
     }
-    .item-header div:first-child {
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .date-time {
+      text-align: right;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.8rem;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .date-time span {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .tabs {
+      max-width: 1200px;
+      margin: -1.5rem auto 1rem;
+      background: var(--card-light);
+      border-radius: 20px;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 10;
+    }
+
+    .dark-mode .tabs {
+      background: var(--card-dark);
+    }
+
+    .tab {
+      flex: 1;
+      max-width: 200px;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
-    .item-header input[type="checkbox"] {
-      margin-right: 8px;
+
+    .tab:hover {
+      background: rgba(79, 70, 229, 0.1);
     }
-    .item-body { padding: 12px; }
-    .map {
-      width: 100%;
-      height: 150px;
-      border-radius: var(--border-radius);
-      margin-bottom: 8px;
-      position: relative;
+
+    .tab.active {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
     }
-    .details {
+
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-light);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .card {
+      background: var(--card-dark);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .dark-mode .card h2 {
+      color: var(--secondary-color);
+    }
+
+    .subject-item {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--subtext);
+      align-items: center;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border-radius: 12px;
+      background: rgba(79, 70, 229, 0.05);
+      transition: all 0.3s ease;
     }
-    .details span { display: flex; align-items: center; gap: 4px; }
-    .details span.avg-speed {
-      font-weight: bold;
-      color: var(--primary);
+
+    .subject-item:hover {
+      background: rgba(79, 70, 229, 0.1);
     }
-    
-    #deleteSelected {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: var(--border-radius);
-      font-size: 16px;
+
+    .subject-icon {
+      background: var(--primary-color);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+    }
+
+    .subject-info {
+      flex: 1;
+    }
+
+    .subject-name {
       font-weight: 600;
-      background: var(--secondary);
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.3s;
-      margin-top: 8px;
-      display: none;
+      margin-bottom: 0.2rem;
     }
-    #deleteSelected:hover { background: #d50044; }
-    
-    .modal {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--card-bg);
-      border-top-left-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
-      padding: 16px;
-      display: none;
-      z-index: 1000;
+
+    .subject-teacher {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      opacity: 0.8;
     }
-    .modal.active { display: block; }
-    .modal h3 {
-      font-family: 'Montserrat', sans-serif;
-      text-align: center;
-      color: var(--primary);
-      margin-bottom: 12px;
+
+    .dark-mode .subject-teacher {
+      color: var(--text-dark);
     }
-    .modal input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border: 1px solid #ccc;
-      border-radius: var(--border-radius);
-      font-size: 16px;
-    }
-    .modal button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: var(--border-radius);
-      font-size: 16px;
+
+    .badge {
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
       font-weight: 600;
-      background: var(--primary);
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    .modal button:hover { background: #2c387e; }
-    
-    @media (min-width: 768px) {
-      .container { max-width: 600px; }
-      header h1 { font-size: 28px; }
-      .btn { font-size: 18px; }
+
+    .badge.kelar {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .badge.belum {
+      background: var(--danger-color);
+      color: white;
+    }
+
+    .task-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .task-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .task-due {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      opacity: 0.8;
+    }
+
+    .dark-mode .task-due {
+      color: var(--text-dark);
+    }
+
+    #toggle-mode {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      padding: 0.8rem;
+      border-radius: 12px;
+      cursor: pointer;
+      color: white;
+      font-size: 1.2rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    #toggle-mode:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-in {
+      animation: slideIn 0.5s ease-out forwards;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .date-time {
+        width: 100%;
+      }
+
+      .tabs {
+        margin: 1rem;
+        flex-direction: column;
+      }
+
+      .tab {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="splash">
-    <img class="logo" src="MainLogo.jpg" alt="Logo">
-  </div>
-  
-  <div class="container">
-    <header>
-      <h1>Motion Flow</h1>
-    </header>
-    
-    <section class="section">
-      <div class="card">
-        <h2>Weekly Distance</h2>
-        <canvas id="weeklyChart"></canvas>
+  <div class="header">
+    <div class="header-content">
+      <h1>
+        <i class="fas fa-graduation-cap"></i>
+        Jadwal Sekolah kelas 9.3
+      </h1>
+      <div class="date-time">
+        <span id="current-date">Tanggal</span>
+        <span id="current-time">Jam</span>
       </div>
-    </section>
-    
-    <section class="section">
-      <div class="card">
-        <div class="stats-grid">
-          <div class="stat">
-            <div class="icon"><i class="fas fa-road"></i></div>
-            <div class="value" id="distance">0.00</div>
-            <div class="label">km</div>
-          </div>
-          <div class="stat">
-            <div class="icon"><i class="fas fa-fire"></i></div>
-            <div class="value" id="calories">0</div>
-            <div class="label">cal</div>
-          </div>
-          <div class="stat">
-            <div class="icon"><i class="fas fa-bolt"></i></div>
-            <div class="value" id="watts">0</div>
-            <div class="label">W</div>
-          </div>
-          <div class="stat">
-            <div class="icon"><i class="fas fa-mountain"></i></div>
-            <div class="value" id="elevation">0</div>
-            <div class="label">m</div>
-          </div>
-        </div>
-        <div id="currentSpeed">Current Speed: 0 km/h</div>
-        <div class="btn-group">
-          <button id="startBtn" class="btn btn-start"><i class="fas fa-play"></i> Start</button>
-          <button id="stopBtn" class="btn btn-stop" style="display: none;"><i class="fas fa-stop"></i> Stop</button>
-        </div>
-      </div>
-    </section>
-    
-    <section class="section">
-      <div class="card history-section">
-        <h3>Recent Workouts</h3>
-        <div id="historyList"></div>
-        <button id="deleteSelected">Hapus yang Dipilih</button>
-      </div>
-    </section>
+      <button id="toggle-mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
   </div>
-  
-  <div class="modal" id="workoutModal">
-    <h3>Name Your Workout</h3>
-    <input type="text" id="workoutName" placeholder="Enter workout name" />
-    <button id="saveWorkout">Save Workout</button>
-  </div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    // Atur skema warna sesuai preferensi pengguna
-    function applyColorScheme() {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        document.documentElement.classList.add('light');
-      } else {
-        document.documentElement.classList.remove('light');
-      }
-    }
-    applyColorScheme();
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', applyColorScheme);
-    
-    // Variabel global untuk tracking workout
-    let tracking = false, watchId, lastPos = null, startTime = null;
-    let workout = { distance: 0, calories: 0, watts: 0, elevation: 0, route: [] };
-    let history = JSON.parse(localStorage.getItem('workoutHistory')) || [];
-    
-    const distanceEl = document.getElementById('distance');
-    const caloriesEl = document.getElementById('calories');
-    const wattsEl = document.getElementById('watts');
-    const elevationEl = document.getElementById('elevation');
-    const currentSpeedEl = document.getElementById('currentSpeed');
-    const startBtn = document.getElementById('startBtn');
-    const stopBtn = document.getElementById('stopBtn');
-    const modal = document.getElementById('workoutModal');
-    const workoutNameInput = document.getElementById('workoutName');
-    const saveWorkoutBtn = document.getElementById('saveWorkout');
-    
-    const ctx = document.getElementById('weeklyChart').getContext('2d');
-    let weeklyChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        datasets: [{
-          label: 'Distance (km)',
-          data: calcWeekly(),
-          backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--primary').trim(),
-          borderRadius: 8
-        }]
-      },
-      options: { responsive: true, scales: { y: { beginAtZero: true } } }
-    });
-    
-    function calcWeekly() {
-      let today = new Date(), start = new Date(today);
-      start.setDate(today.getDate() - today.getDay());
-      return Array(7).fill(0).map((_, i) => {
-        let day = new Date(start);
-        day.setDate(start.getDate() + i);
-        return history.filter(w => new Date(w.date).toDateString() === day.toDateString())
-                      .reduce((sum, w) => sum + w.distance, 0);
-      });
-    }
-    
-    // Fungsi untuk mengupdate tampilan statistik dan menyimpan state workout jika tracking aktif
-    function updateStats() {
-      distanceEl.textContent = workout.distance.toFixed(2);
-      caloriesEl.textContent = Math.round(workout.calories);
-      wattsEl.textContent = Math.round(workout.watts);
-      elevationEl.textContent = Math.round(workout.elevation);
-      if (tracking && startTime) {
-        let elapsedSeconds = (Date.now() - startTime.getTime()) / 1000;
-        let currentSpeed = elapsedSeconds > 0 ? (workout.distance * 3600 / elapsedSeconds).toFixed(2) : 0;
-        currentSpeedEl.innerText = "Current Speed: " + currentSpeed + " km/h";
-      } else {
-        currentSpeedEl.innerText = "Current Speed: 0 km/h";
-      }
-      // Simpan state workout yang sedang berjalan ke localStorage
-      if(tracking) {
-        localStorage.setItem("currentWorkout", JSON.stringify({
-          tracking: tracking,
-          workout: workout,
-          startTime: startTime,
-          lastPos: lastPos
-        }));
-      }
-    }
-    
-    // Fungsi untuk menghitung jarak antara dua koordinat (dalam km)
-    function calcDistance(lat1, lon1, lat2, lon2) {
-      const R = 6371;
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLon/2)**2;
-      return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)));
-    }
-    
-    // Event listener untuk tombol Start
-    startBtn.addEventListener('click', () => {
-      if (navigator.geolocation) {
-        tracking = true;
-        // Inisialisasi ulang workout agar nilainya mulai dari 0
-        workout = { distance: 0, calories: 0, watts: 0, elevation: 0, route: [] };
-        lastPos = null;
-        startTime = new Date();
-        startBtn.style.display = 'none';
-        stopBtn.style.display = 'block';
-        localStorage.removeItem("currentWorkout");
-        watchId = navigator.geolocation.watchPosition(pos => {
-          const lat = pos.coords.latitude, lon = pos.coords.longitude;
-          workout.route.push([lat, lon]);  
-          if (lastPos) {
-            const d = calcDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lon);
-            workout.distance += d;
-            workout.calories += d * 60;
-            workout.watts += d * 100;
-            if (pos.coords.altitude && lastPos.coords.altitude) {
-              const elev = pos.coords.altitude - lastPos.coords.altitude;
-              if (elev > 0) workout.elevation += elev;
-            }
-          }
-          lastPos = pos;
-          updateStats();
-        }, err => console.error(err), { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 });
-      } else {
-        alert('Geolocation not supported');
-      }
-    });
-    
-    // Event listener untuk tombol Stop
-    stopBtn.addEventListener('click', () => {
-      if (tracking) {
-        navigator.geolocation.clearWatch(watchId);
-        tracking = false;
-        let endTime = new Date();
-        workout.duration = (endTime - startTime) / 1000;
-        modal.classList.add('active');
-      }
-    });
-    
-    // Saat workout disimpan, data currentWorkout dihapus dan workout ditambahkan ke history
-    saveWorkoutBtn.addEventListener('click', () => {
-      const name = workoutNameInput.value.trim() || "Workout";
-      workout.activityName = name;
-      workout.date = new Date().toISOString();
-      history.unshift(workout);
-      localStorage.setItem('workoutHistory', JSON.stringify(history));
-      workoutNameInput.value = '';
-      modal.classList.remove('active');
-      startBtn.style.display = 'block';
-      stopBtn.style.display = 'none';
-      localStorage.removeItem("currentWorkout");
-      updateHistory();
-      weeklyChart.data.datasets[0].data = calcWeekly();
-      weeklyChart.update();
-    });
-    
-    function formatDuration(seconds) {
-      let h = Math.floor(seconds / 3600);
-      let m = Math.floor((seconds % 3600) / 60);
-      let s = Math.floor(seconds % 60);
-      let result = "";
-      if (h > 0) { result += h + " jam "; }
-      if (m > 0 || h > 0) { result += m + " menit "; }
-      result += s + " detik";
-      return result;
-    }
-    
-    function updateHistory() {
-      const historyList = document.getElementById('historyList');
-      historyList.innerHTML = '';
-      for (let i = 0; i < Math.min(5, history.length); i++) {
-        const w = history[i];
-        const item = document.createElement('div');
-        item.className = 'history-item';
-        item.setAttribute('data-index', i);
-        item.innerHTML = `
-          <div class="item-header">
-            <div>
-              <input type="checkbox" class="delete-checkbox" data-index="${i}">
-              <span>${w.activityName}</span>
-            </div>
-            <div>${new Date(w.date)
-                      .toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
-                      .toLowerCase()}</div>
-          </div>
-          <div class="item-body">
-            <div class="map" id="map${i}"></div>
-            <div class="details">
-              <span><i class="fas fa-fire"></i> ${Math.round(w.calories)} cal</span>
-              <span><i class="fas fa-road"></i> ${w.distance.toFixed(2)} km</span>
-              <span><i class="fas fa-bolt"></i> ${Math.round(w.watts)} W</span>
-              <span><i class="fas fa-mountain"></i> ${Math.round(w.elevation)} m</span>
-              <span><i class="fas fa-clock"></i> ${formatDuration(w.duration)}</span>
-              <span class="avg-speed"><i class="fas fa-tachometer-alt"></i> ${w.duration > 0 ? (w.distance * 3600 / w.duration).toFixed(2) : 0} km/h</span>
-            </div>
-          </div>`;
-        historyList.appendChild(item);
-        
-        if (w.route && w.route.length > 1) {
-          createMap('map' + i, w.route);
-        }
-        
-        // Event listener untuk checkbox
-        const checkbox = item.querySelector('.delete-checkbox');
-        checkbox.addEventListener('change', updateDeleteButtonVisibility);
-      }
-      updateDeleteButtonVisibility();
-    }
-    
-    function createMap(id, route) {
-      const map = L.map(id, { zoomControl: false, attributionControl: false, scrollWheelZoom: false });
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png').addTo(map);
-      const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
-      const poly = L.polyline(route, { color: primaryColor }).addTo(map);
-      L.marker(route[0], { icon: L.divIcon({ className: 'custom-marker start-marker', html: 'S', iconSize: [24,24] }) }).addTo(map);
-      L.marker(route[route.length - 1], { icon: L.divIcon({ className: 'custom-marker end-marker', html: 'E', iconSize: [24,24] }) }).addTo(map);
-      map.fitBounds(poly.getBounds(), { padding: [10,10] });
-      
-      const playBtn = document.createElement('button');
-      playBtn.innerText = "Play";
-      playBtn.style.position = "absolute";
-      playBtn.style.top = "10px";
-      playBtn.style.right = "10px";
-      playBtn.style.zIndex = "1000";
-      playBtn.style.backgroundColor = "rgba(255,255,255,0.7)";
-      playBtn.style.border = "none";
-      playBtn.style.borderRadius = "4px";
-      playBtn.style.padding = "6px 10px";
-      playBtn.style.cursor = "pointer";
-      document.getElementById(id).appendChild(playBtn);
-      
-      let animationRequestId = null;
-      let currentSegmentIndex = 0;
-      let segmentStartTime = null;
-      const segmentDuration = 1000;
-      
-      playBtn.addEventListener("click", function(){
-        if (animationRequestId === null) {
-          playBtn.innerText = "Stop";
-          currentSegmentIndex = 0;
-          segmentStartTime = null;
-          animationRequestId = requestAnimationFrame(step);
-        } else {
-          cancelAnimationFrame(animationRequestId);
-          animationRequestId = null;
-          playBtn.innerText = "Play";
-        }
-      });
-      
-      function step(timestamp) {
-        if (!segmentStartTime) segmentStartTime = timestamp;
-        let elapsed = timestamp - segmentStartTime;
-        if (elapsed > segmentDuration) {
-          currentSegmentIndex++;
-          if (currentSegmentIndex >= route.length - 1) {
-            animMarker.setLatLng(route[route.length - 1]);
-            map.panTo(route[route.length - 1], { animate: true, duration: 0.5 });
-            playBtn.innerText = "Play";
-            animationRequestId = null;
-            return;
-          }
-          segmentStartTime = timestamp;
-          elapsed = 0;
-        }
-        let t = elapsed / segmentDuration;
-        let p0 = route[currentSegmentIndex];
-        let p1 = route[currentSegmentIndex + 1];
-        let lat = p0[0] + (p1[0] - p0[0]) * t;
-        let lng = p0[1] + (p1[1] - p0[1]) * t;
-        let newPos = [lat, lng];
-        animMarker.setLatLng(newPos);
-        map.panTo(newPos, { animate: false });
-        animationRequestId = requestAnimationFrame(step);
-      }
-      
-      let animMarker = L.marker(route[0]).addTo(map);
-    }
-    
-    function updateDeleteButtonVisibility() {
-      const checkboxes = document.querySelectorAll('.delete-checkbox');
-      const deleteSelectedBtn = document.getElementById('deleteSelected');
-      let anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-      deleteSelectedBtn.style.display = anyChecked ? 'block' : 'none';
-    }
-    
-    const deleteSelectedBtn = document.getElementById('deleteSelected');
-    deleteSelectedBtn.addEventListener('click', () => {
-      const selectedCheckboxes = document.querySelectorAll('.delete-checkbox:checked');
-      let indices = [];
-      selectedCheckboxes.forEach(cb => {
-        let idx = parseInt(cb.getAttribute('data-index'));
-        indices.push(idx);
-      });
-      indices.sort((a, b) => b - a);
-      indices.forEach(idx => { history.splice(idx, 1); });
-      localStorage.setItem('workoutHistory', JSON.stringify(history));
-      updateHistory();
-      weeklyChart.data.datasets[0].data = calcWeekly();
-      weeklyChart.update();
-    });
-    
-    // Saat halaman load, periksa apakah ada workout yang sedang berjalan (currentWorkout)
-    window.addEventListener("load", function(){
-      setTimeout(function(){
-        const splash = document.getElementById("splash");
-        splash.style.opacity = 0;
-        setTimeout(function(){ splash.style.display = "none"; }, 1000);
-      }, 3000);
 
-      // Restore workout yang belum selesai, jika ada
-      let savedWorkoutData = localStorage.getItem("currentWorkout");
-      if (savedWorkoutData) {
-        try {
-          let savedData = JSON.parse(savedWorkoutData);
-          if (savedData.tracking) {
-            tracking = true;
-            workout = savedData.workout;
-            startTime = new Date(savedData.startTime);
-            lastPos = savedData.lastPos;
-            startBtn.style.display = 'none';
-            stopBtn.style.display = 'block';
-            updateStats();
-            if (navigator.geolocation) {
-              watchId = navigator.geolocation.watchPosition(pos => {
-                const lat = pos.coords.latitude, lon = pos.coords.longitude;
-                workout.route.push([lat, lon]);  
-                if (lastPos) {
-                  const d = calcDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lon);
-                  workout.distance += d;
-                  workout.calories += d * 60;
-                  workout.watts += d * 100;
-                  if (pos.coords.altitude && lastPos.coords.altitude) {
-                    const elev = pos.coords.altitude - lastPos.coords.altitude;
-                    if (elev > 0) workout.elevation += elev;
-                  }
-                }
-                lastPos = pos;
-                updateStats();
-              }, err => console.error(err), { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 });
-            }
-          }
-        } catch(e) {
-          console.error("Error restoring currentWorkout:", e);
-        }
-      }
+  <div class="tabs">
+    <div class="tab active" data-tab="schedule">
+      <i class="fas fa-calendar-alt"></i>
+      Jadwal
+    </div>
+    <div class="tab" data-tab="tasks">
+      <i class="fas fa-tasks"></i>
+      Tugas
+    </div>
+  </div>
+
+  <div class="content" id="content"></div>
+
+  <script>
+    const scheduleData = [
+    { day: "Senin", subjects: [
+          { name: "SBK", teacher: "Ida Farida, S.Ag", icon: "fa-paint-brush" },
+          { name: "IPS", teacher: "Eko Suwarmo, S.Pd", icon: "fa-globe" },
+          { name: "PJOK", teacher: "Rismanto, S.Pd., MA", icon: "fa-running" },
+          { name: "Bahasa Inggris", teacher: "Siti Suryani, S.Pd", icon: "fa-language" },
+          { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd", icon: "fa-book" }
+      ]},
+      { day: "Selasa", subjects: [
+          { name: "PKN", teacher: "Lilik Haryani, S.Pd", icon: "fa-flag" },
+          { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd", icon: "fa-book" },
+          { name: "Matematika", teacher: "Lely Farhani, S.Pd", icon: "fa-square-root-alt" },
+          { name: "Bahasa Inggris", teacher: "Siti Suryani, S.Pd", icon: "fa-language" },
+          { name: "IT", teacher: "Muhammad Farrel Sidqi, S.Pd", icon: "fa-laptop-code" }
+      ]},
+      { day: "Rabu", subjects: [
+          { name: "IPA", teacher: "H. Faqih Usman, M.Pd", icon: "fa-flask" },
+          { name: "MTK", teacher: "Lely Farhani, S.Pd", icon: "fa-square-root-alt" },
+          { name: "SKI", teacher: "Hj. Emi Karyati, S.Ag", icon: "fa-history" },
+          { name: "IPS", teacher: "Eko Suwarmo, S.Pd", icon: "fa-globe" },
+          { name: "Bahasa Arab", teacher: "H. Taufik Husein, SS., M.Pd", icon: "fa-language" },
+          { name: "PJOK", teacher: "Rismanto, S.Pd.,MA", icon: "fa-running" }
+      ]},
+      { day: "Kamis", subjects: [
+          { name: "Aqidah Akhlaq", teacher: "Dra. Hj. Nursaena", icon: "fa-star-and-crescent" },
+          { name: "FIKIH", teacher: "Ahmad Zakaria, Lc", icon: "fa-book-open" },
+          { name: "Bahasa Arab", teacher: "H. Taufik Husein, SS., M.Pd", icon: "fa-language" },
+          { name: "PKN", teacher: "Lilik Haryani, S.Pd", icon: "fa-flag" },
+          { name: "Tahfidz", teacher: "Jiah Ulhak, S.Pd", icon: "fa-quran" }
+      ]},
+      { day: "Jumat", subjects: [
+          { name: "Bahasa Indonesia", teacher: "Nurain, S.Pd", icon: "fa-book" },
+          { name: "IPA", teacher: "H. Faqih Usman, M.Pd", icon: "fa-flask" },
+          { name: "Qurdist", teacher: "Arini Saila Haq, Lc", icon: "fa-book-open" }
+      ]}
+    ];
+    const taskData = [  
+    { subject: "Bahasa Indonesia", desc: "Ulangan (esay)", due: "Selasa, 4 Januari 2025", status: "belum" },
+    { subject: "Bahasa Indonesia", desc: "Bukpet hal 219 mencari pro dan kontra dari teks yang ada", due: "Selasa, 4 Januari 2025", status: "kelar" },
+    { subject: "Bahasa Inggris", desc: "Membuat cerita fantasi sama teman sebangku", due: "Selasa, 4 februari 2025", status: "kelar" },
+    { subject: "Bahasa Inggris", desc: "Mind Mapping Teks Prosedur (Pengertian, Tujuan, General Structure, Ciri - Ciri)", due: "Selasa, 4 februari 2025", status: "kelar" },  
+    { subject: "PKN", desc: "Kerjakan Bukpet Hal 134 bagian b", due: "Selasa, 4 Februari 2025", status: "kelar" },
+    { subject: "PKN", desc: "Presentasi Bab 4", due: "Selasa, 4 Februari 2025", status: "belum" },
+    { subject: "Pjok", desc: "Kerjakan lks pjok hal 20", due: "Rabu, 5 februari 2025", status: "kelar" },  
+     { subject: "SBK", desc: "Bikin jurnal campuran di canva sama temen sebangku", due: "Senin, 10 Februari 2025", status: "belum" },  
+  ];
+  
+    
+    
+    const updateDateTime = () => {
+      const now = new Date();
+      const optionsDate = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+      const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      document.getElementById("current-date").textContent = now.toLocaleDateString("id-ID", optionsDate);
+      document.getElementById("current-time").textContent = now.toLocaleTimeString("id-ID", optionsTime);
+    };
+    const renderSchedule = () => {
+      content.innerHTML = scheduleData.map(day => `
+        <div class="card animate-slide-in">
+          <h2><i class="fas fa-calendar-day"></i> ${day.day}</h2>
+          <div class="subjects">
+            ${day.subjects.map(sub => `
+              <div class="subject-item">
+                <div class="subject-icon">
+                  <i class="fas ${sub.icon}"></i>
+                </div>
+                <div class="subject-info">
+                  <div class="subject-name">${sub.name}</div>
+                  <div class="subject-teacher">${sub.teacher}</div>
+                </div>
+              </div>
+            `).join("") || '<p class="text-center">Belum ada jadwal</p>'}
+          </div>
+        </div>
+      `).join("");
+    };
+    const renderTasks = () => {
+      content.innerHTML = taskData.length ? taskData.map(task => `
+        <div class="card task-card animate-slide-in">
+          <div class="task-header">
+            <strong>${task.subject}</strong>
+            <span class="badge ${task.status}">${task.status === 'kelar' ? 'Kelar' : 'Belum'}</span>
+          </div>
+          <p>${task.desc}</p>
+          <div class="task-due">
+            <i class="fas fa-clock"></i>
+            ${task.due}
+          </div>
+        </div>
+      `).join("") : '<div class="card animate-slide-in"><p class="text-center">Belum ada tugas</p></div>';
+    };
+    const tabs = document.querySelectorAll(".tab");
+    const content = document.getElementById("content");
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+        tab.dataset.tab === "schedule" ? renderSchedule() : renderTasks();
+      });
     });
+    document.getElementById("toggle-mode").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const icon = document.querySelector("#toggle-mode i");
+      icon.classList.toggle("fa-moon");
+      icon.classList.toggle("fa-sun");
+    });
+
+    // Anti Inspect Code
+
+    // 1. Menonaktifkan klik kanan
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        alert("Klik kanan dinonaktifkan!");
+    });
+
+    // 2. Menonaktifkan shortcut keyboard untuk inspect element
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 'i' || e.key === 'I') || 
+            e.ctrlKey && e.shiftKey && (e.key === 'c' || e.key === 'C') || 
+            e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) {
+            e.preventDefault();
+            alert("Developer Tools dinonaktifkan!");
+        }
+    });
+
+    // 3. Mendeteksi jika Developer Tools terbuka
+    const threshold = 160; // Ukuran minimal console saat dibuka
+    let devtoolsOpen = false;
+
+    setInterval(function() {
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+        
+        if ((widthThreshold || heightThreshold) && !devtoolsOpen) {
+            devtoolsOpen = true;
+            document.body.innerHTML = '<h1>Developer Tools terdeteksi! Silakan tutup untuk melanjutkan.</h1>';
+        } else if (!widthThreshold && !heightThreshold && devtoolsOpen) {
+            devtoolsOpen = false;
+            location.reload(); // Reload halaman setelah tools ditutup
+        }
+    }, 500);
+
+    renderSchedule();
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
   </script>
 </body>
 </html>
